@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Leads | JBR Academy</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  body { background: var(--off-white); }
+  .admin-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
+  table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+  th, td { text-align: left; padding: 10px 12px; font-size: 0.85rem; border-bottom: 1px solid var(--gray-light); white-space: nowrap; }
+  th { background: var(--navy); color: var(--white); position: sticky; top: 0; }
+  tr:last-child td { border-bottom: none; }
+  .table-scroll { overflow-x: auto; border-radius: var(--radius); }
+  .empty { padding: 30px; text-align: center; color: var(--gray); }
+  .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
+  .count-badge { background: var(--navy); color: var(--white); padding: 3px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><img src="assets/logo.png" alt="JBR Academy" class="brand-mark"></span>
+    </a>
+    <div style="color:var(--white); font-weight:700;">Panel interno — solo para el fundador</div>
+  </div>
+</header>
+
+<div class="admin-wrap">
+  <div class="dev-note" style="margin: 20px 0;">
+    Esta página lee directamente <code>/web/data/leads.json</code> y
+    <code>/web/data/uniform-orders.json</code> a través del servidor local
+    (<code>server.py</code>). No tiene contraseña todavía — antes de publicar el
+    sitio en internet, esta página debe protegerse con acceso restringido (ver
+    aviso al fundador).
+  </div>
+
+  <h2 style="color:var(--navy);">Registros de Free Tryout</h2>
+  <div class="toolbar">
+    <span class="count-badge" id="leadsCount">0</span>
+    <button class="btn btn-navy" id="exportLeads" style="padding:8px 18px; font-size:0.85rem;">Descargar CSV</button>
+  </div>
+  <div class="table-scroll">
+    <table id="leadsTable">
+      <thead>
+        <tr>
+          <th>Recibido</th><th>Padre/Madre</th><th>Teléfono</th><th>Niño/a</th>
+          <th>Edad</th><th>Horario</th><th>Waiver</th><th>Idioma</th><th>Fuente</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty" id="leadsEmpty" style="display:none;">Todavía no hay registros de Free Tryout.</div>
+  </div>
+
+  <h2 style="color:var(--navy); margin-top:48px;">Pedidos de Uniformes</h2>
+  <div class="toolbar">
+    <span class="count-badge" id="ordersCount">0</span>
+    <button class="btn btn-navy" id="exportOrders" style="padding:8px 18px; font-size:0.85rem;">Descargar CSV</button>
+  </div>
+  <div class="table-scroll">
+    <table id="ordersTable">
+      <thead>
+        <tr>
+          <th>Recibido</th><th>Jugador/a</th><th>Nombre camiseta</th><th>Número</th>
+          <th>Grupo</th><th>Posición</th><th>Talla</th><th>Piezas</th><th>Cant.</th>
+          <th>Teléfono</th><th>Notas</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty" id="ordersEmpty" style="display:none;">Todavía no hay pedidos de uniformes.</div>
+  </div>
+</div>
+
+<script>
+function fmtDate(iso) {
+  if (!iso) return "";
+  var d = new Date(iso);
+  return d.toLocaleString("es-US", { dateStyle: "short", timeStyle: "short" });
+}
+
+function toCsv(rows, columns) {
+  var lines = [columns.map(function (c) { return c.label; }).join(",")];
+  rows.forEach(function (r) {
+    lines.push(columns.map(function (c) {
+      var v = (c.get(r) || "").toString().replace(/"/g, '""');
+      return '"' + v + '"';
+    }).join(","));
+  });
+  return lines.join("\n");
+}
+
+function downloadCsv(filename, csv) {
+  var blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function loadLeads() {
+  fetch("/api/leads").then(function (r) { return r.json(); }).then(function (leads) {
+    document.getElementById("leadsCount").textContent = leads.length;
+    var tbody = document.querySelector("#leadsTable tbody");
+    tbody.innerHTML = "";
+    if (leads.length === 0) {
+      document.getElementById("leadsEmpty").style.display = "block";
+    }
+    leads.slice().reverse().forEach(function (l) {
+      var tr = document.createElement("tr");
+      tr.innerHTML = "<td>" + fmtDate(l.receivedAt) + "</td>" +
+        "<td>" + (l.parentName || "") + "</td>" +
+        "<td>" + (l.phone || "") + "</td>" +
+        "<td>" + (l.childName || "") + "</td>" +
+        "<td>" + (l.childAge || "") + "</td>" +
+        "<td>" + (l.assignedSchedule || "") + "</td>" +
+        "<td>" + (l.waiverAccepted ? "Sí" : "No") + "</td>" +
+        "<td>" + (l.language || "") + "</td>" +
+        "<td>" + (l.source ? (l.source.utm_source + " / " + l.source.utm_campaign) : "") + "</td>";
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById("exportLeads").onclick = function () {
+      var cols = [
+        { label: "Recibido", get: function (r) { return fmtDate(r.receivedAt); } },
+        { label: "Padre/Madre", get: function (r) { return r.parentName; } },
+        { label: "Telefono", get: function (r) { return r.phone; } },
+        { label: "Nino/a", get: function (r) { return r.childName; } },
+        { label: "Edad", get: function (r) { return r.childAge; } },
+        { label: "Horario", get: function (r) { return r.assignedSchedule; } },
+        { label: "Waiver", get: function (r) { return r.waiverAccepted ? "Si" : "No"; } },
+        { label: "Idioma", get: function (r) { return r.language; } }
+      ];
+      downloadCsv("jbr-leads.csv", toCsv(leads, cols));
+    };
+  }).catch(function () {
+    document.getElementById("leadsEmpty").style.display = "block";
+    document.getElementById("leadsEmpty").textContent = "No se pudo conectar con el servidor local (¿está corriendo server.py?).";
+  });
+}
+
+function loadOrders() {
+  fetch("/api/uniform-orders").then(function (r) { return r.json(); }).then(function (orders) {
+    document.getElementById("ordersCount").textContent = orders.length;
+    var tbody = document.querySelector("#ordersTable tbody");
+    tbody.innerHTML = "";
+    if (orders.length === 0) {
+      document.getElementById("ordersEmpty").style.display = "block";
+    }
+    orders.slice().reverse().forEach(function (o) {
+      var tr = document.createElement("tr");
+      tr.innerHTML = "<td>" + fmtDate(o.receivedAt) + "</td>" +
+        "<td>" + (o.playerName || "") + "</td>" +
+        "<td>" + (o.jerseyName || "") + "</td>" +
+        "<td>" + (o.jerseyNumber || "") + "</td>" +
+        "<td>" + (o.uniformGroup || "") + "</td>" +
+        "<td>" + (o.position || "") + "</td>" +
+        "<td>" + (o.size || "") + "</td>" +
+        "<td>" + (o.pieces || "") + "</td>" +
+        "<td>" + (o.quantity || "") + "</td>" +
+        "<td>" + (o.phone || "") + "</td>" +
+        "<td>" + (o.notes || "") + "</td>";
+      tbody.appendChild(tr);
+    });
+
+    document.getElementById("exportOrders").onclick = function () {
+      var cols = [
+        { label: "Recibido", get: function (r) { return fmtDate(r.receivedAt); } },
+        { label: "Jugador", get: function (r) { return r.playerName; } },
+        { label: "Nombre camiseta", get: function (r) { return r.jerseyName; } },
+        { label: "Numero", get: function (r) { return r.jerseyNumber; } },
+        { label: "Grupo", get: function (r) { return r.uniformGroup; } },
+        { label: "Talla", get: function (r) { return r.size; } },
+        { label: "Piezas", get: function (r) { return r.pieces; } },
+        { label: "Cantidad", get: function (r) { return r.quantity; } },
+        { label: "Telefono", get: function (r) { return r.phone; } }
+      ];
+      downloadCsv("jbr-pedidos-uniforme.csv", toCsv(orders, cols));
+    };
+  }).catch(function () {
+    document.getElementById("ordersEmpty").style.display = "block";
+    document.getElementById("ordersEmpty").textContent = "No se pudo conectar con el servidor local (¿está corriendo server.py?).";
+  });
+}
+
+loadLeads();
+loadOrders();
+</script>
+</body>
+</html>

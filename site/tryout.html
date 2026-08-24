@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Tryout Gratis | JBR Academy</title>
+<meta name="description" content="Regístrate a tu clase de evaluación gratuita en JBR Academy, Orlando FL. Sin compromiso.">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/i18n.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><img src="assets/logo.png" alt="JBR Academy" class="brand-mark"></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" data-i18n="nav.home">Inicio</a>
+      <a href="tryout.html" class="active" data-i18n="nav.tryout">Free Tryout</a>
+      <a href="programas.html" data-i18n="nav.programs">Programas &amp; Coaches</a>
+      <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+      <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
+      <a href="conocenos.html" data-i18n="nav.about">Conócenos</a>
+    </nav>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <a href="tryout.html" class="btn btn-white header-cta" data-i18n="nav.ctaButton">Tryout Gratis</a>
+    <button class="menu-toggle" aria-label="Abrir menú" onclick="document.getElementById('mobileMenu').classList.toggle('open')">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav.home">Inicio</a>
+    <a href="tryout.html" data-i18n="nav.tryout">Free Tryout</a>
+    <a href="programas.html" data-i18n="nav.programs">Programas &amp; Coaches</a>
+    <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+    <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
+    <a href="conocenos.html" data-i18n="nav.about">Conócenos</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" style="padding: 48px 0 56px;">
+  <div class="container">
+    <span class="eyebrow" data-i18n="tryout.hero.badge">100% Gratis · Sin Compromiso</span>
+    <h1 data-i18n-html="tryout.hero.title">Regístrate a Tu <span>Tryout Gratis</span></h1>
+    <p class="lead" data-i18n="tryout.hero.lead">Un coach de JBR Academy evaluará el nivel de tu hijo/a y te
+      recomendará el mejor programa para empezar. Cupos limitados por grupo de edad.</p>
+  </div>
+</section>
+
+<section class="bg-off">
+  <div class="container">
+    <div class="grid-2" style="align-items:flex-start;">
+
+      <div>
+        <div class="card" style="margin-bottom:22px;">
+          <h3 style="color:var(--navy); margin-top:0;" data-i18n="tryout.info.title">¿Qué incluye el tryout?</h3>
+          <p style="color:var(--gray); margin-bottom:0;" data-i18n="tryout.info.text">Una sesión de evaluación con
+            uno de nuestros coaches, dentro del horario regular del grupo de edad
+            correspondiente — bateo, defensa y una primera impresión del nivel actual
+            de tu hijo/a.</p>
+        </div>
+
+        <div class="card">
+          <h3 style="color:var(--navy); margin-top:0;" data-i18n="tryout.faq.title">Preguntas Frecuentes</h3>
+          <div class="faq-item">
+            <h4 data-i18n="tryout.faq.q1">¿El tryout tiene costo?</h4>
+            <p data-i18n="tryout.faq.a1">No, es completamente gratis y sin compromiso de inscripción.</p>
+          </div>
+          <div class="faq-item">
+            <h4 data-i18n="tryout.faq.q2">¿Qué debe traer mi hijo/a?</h4>
+            <p data-i18n="tryout.faq.a2">Guante, gorra y ropa deportiva cómoda. Los tacos de beisbol son
+              recomendados pero no obligatorios para el tryout.</p>
+          </div>
+          <div class="faq-item">
+            <h4 data-i18n="tryout.faq.q3">¿Necesita experiencia previa?</h4>
+            <p data-i18n="tryout.faq.a3">No. Tenemos programas desde los 4 años — evaluamos el nivel actual
+              y lo ubicamos en el grupo adecuado.</p>
+          </div>
+          <div class="faq-item" style="border-bottom:none;">
+            <h4 data-i18n="tryout.faq.q4">¿Qué pasa después del tryout?</h4>
+            <p data-i18n="tryout.faq.a4">Un coach conversará contigo sobre el progreso observado y el mejor
+              programa para continuar el desarrollo de tu hijo/a.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h3 style="color:var(--navy); margin-top:0;" data-i18n="tryout.form.title">Formulario de Registro</h3>
+
+        <form id="tryoutForm">
+          <div class="form-row">
+            <label for="parentName" data-i18n="tryout.form.parentName">Nombre del padre/madre</label>
+            <input type="text" id="parentName" name="parentName" required>
+          </div>
+          <div class="form-row">
+            <label for="phone" data-i18n="tryout.form.phone">Teléfono (WhatsApp)</label>
+            <input type="tel" id="phone" name="phone" placeholder="(407) 000-0000" data-i18n-placeholder="tryout.form.phonePlaceholder" required>
+          </div>
+          <div class="form-row">
+            <label for="childName" data-i18n="tryout.form.childName">Nombre del niño/a</label>
+            <input type="text" id="childName" name="childName" required>
+          </div>
+          <div class="form-row">
+            <label for="childAge" data-i18n="tryout.form.childAge">Edad del niño/a</label>
+            <input type="number" id="childAge" name="childAge" min="3" max="18" required>
+            <div class="schedule-hint" id="scheduleHint"></div>
+          </div>
+
+          <div class="form-row">
+            <label data-i18n="tryout.form.waiverTitle">Exención de Responsabilidad (Waiver)</label>
+            <div data-i18n-html="tryout.form.waiverBody" style="max-height:160px; overflow-y:auto; border:1.5px solid var(--gray-light); border-radius:10px; padding:14px; font-size:0.82rem; color:var(--gray); background:var(--off-white); line-height:1.5;">
+              <strong>JBR Academy — Exención de Responsabilidad, Autorización Médica
+              y de Imagen (BORRADOR)</strong><br><br>
+              Yo, como padre/madre o tutor legal, autorizo a mi hijo/a a participar
+              en la clase de evaluación gratuita ("Free Tryout") de JBR Academy.
+              Reconozco que el beisbol es una actividad física que conlleva riesgo
+              de lesión, y por la presente libero a JBR Academy, sus coaches y
+              representantes de responsabilidad por lesiones que puedan ocurrir
+              durante la actividad, salvo negligencia comprobada.<br><br>
+              Autorizo a JBR Academy a buscar atención médica de emergencia para
+              mi hijo/a en caso de ser necesario. Autorizo también a JBR Academy
+              a usar fotos y videos de mi hijo/a tomados durante actividades de la
+              academia con fines promocionales (redes sociales, sitio web, materiales
+              de marketing).<br><br>
+              Declaro haber leído y comprendido este documento y participo de forma
+              voluntaria.
+            </div>
+          </div>
+
+          <div class="form-row" style="display:flex; align-items:flex-start; gap:10px;">
+            <input type="checkbox" id="waiverAccept" required style="width:auto; margin-top:4px;">
+            <label for="waiverAccept" style="margin:0; font-weight:600;" data-i18n="tryout.form.waiverCheckbox">
+              He leído y acepto la exención de responsabilidad para que mi hijo/a
+              participe en el Free Tryout.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-white btn-block" data-i18n="tryout.form.submit">Registrar mi Tryout Gratis</button>
+
+          <div class="dev-note" data-i18n="tryout.form.devNote1">
+            Al enviar, se abrirá WhatsApp con tus datos ya escritos para que solo
+            tengas que confirmar el envío al 407-686-4956.
+          </div>
+          <div class="dev-note" data-i18n="tryout.form.legalNote">
+            ⚠️ Aviso legal: el texto del waiver de arriba es un BORRADOR de
+            referencia, no un documento legal válido todavía. Antes de publicar
+            el sitio, debe ser redactado o revisado por un abogado en Florida —
+            las exenciones de responsabilidad para menores de edad tienen reglas
+            específicas por estado y no siempre son ejecutables tal cual.
+          </div>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="check">✓</div>
+          <h3 style="color:var(--navy); margin:0 0 8px;" data-i18n="tryout.success.title">¡Registro recibido!</h3>
+          <p style="color:var(--gray); margin:0;" data-i18n="tryout.success.text">Te contactaremos por WhatsApp para
+            confirmar tu clase de evaluación gratuita.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h5 data-i18n="footer.brandTitle">JBR Academy</h5>
+        <p data-i18n="footer.tagline">Academia de beisbol en Orlando / Kissimmee, FL. Formando jugadores con
+          entrenamiento de nivel profesional desde hace más de 6 años.</p>
+      </div>
+      <div>
+        <h5 data-i18n="footer.navTitle">Navegación</h5>
+        <a href="index.html" data-i18n="nav.home">Inicio</a>
+        <a href="tryout.html" data-i18n="nav.tryout">Free Tryout</a>
+        <a href="programas.html" data-i18n="nav.programs">Programas &amp; Coaches</a>
+        <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+        <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
+        <a href="conocenos.html" data-i18n="nav.about">Conócenos</a>
+      </div>
+      <div>
+        <h5 data-i18n="footer.contactTitle">Contacto</h5>
+        <a href="tel:+14076864956">407-686-4956</a>
+        <a href="https://wa.me/14076864956" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/jbracademy/" target="_blank" rel="noopener">@jbracademy</a>
+        <p data-i18n="footer.address">South Orange Little League Complex, Orlando, FL</p>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="footer.rights">© JBR Academy. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script src="js/i18n-data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/tryout-form.js?v=3"></script>
+</body>
+</html>
