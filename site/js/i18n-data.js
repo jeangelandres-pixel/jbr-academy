@@ -30,8 +30,8 @@ window.JBR_TRANSLATIONS = {
     "home.stats.programsLabel": "Programas por Edad",
 
     "home.success.eyebrow": "Historias de Éxito",
-    "home.success.title": "De JBR al Siguiente Nivel",
-    "home.success.lead": "Jugadores que pasaron por la academia y llegaron lejos — y profesionales de MLB que han venido a entrenar con nosotros.",
+    "home.success.title": "Historias Que Inspiran",
+    "home.success.lead": "Jugadores que se formaron en JBR y llegaron lejos, y profesionales de MLB que han entrenado con nosotros.",
     "home.success.viewMore": "Conócenos Más",
 
     "home.programs.eyebrow": "Programas",
@@ -61,8 +61,6 @@ window.JBR_TRANSLATIONS = {
 
     "story.xavierGori.name": "Xavier Gori",
     "story.xavierGori.detail": "Southeast Arkansas College",
-    "story.contreras.name": "Willson & William Contreras",
-    "story.contreras.detail": "Jugadores de MLB — entrenaron en JBR",
     "story.anderElorriaga.name": "Ander Elorriaga",
     "story.anderElorriaga.detail": "D1 College",
     "story.carlosCordero.name": "Carlos Cordero",
@@ -73,8 +71,6 @@ window.JBR_TRANSLATIONS = {
     "story.fabianGavalo.detail": "College",
     "story.geronimoFermin.name": "Geronimo Fermin",
     "story.geronimoFermin.detail": "Sistema Arizona Diamondbacks",
-    "story.hernanPerez.name": "Hernan Perez",
-    "story.hernanPerez.detail": "Profesional",
     "story.jhoanderIrigoyen.name": "Jhoander Irigoyen",
     "story.jhoanderIrigoyen.detail": "Sistema Chicago Cubs",
     "story.juanOrozco.name": "Juan Orozco",
@@ -85,8 +81,6 @@ window.JBR_TRANSLATIONS = {
     "story.miguelAllegri.detail": "College",
     "story.isaiasDucasse.name": "Isaias Ducasse",
     "story.isaiasDucasse.detail": "D1 College",
-    "story.alvaroGonzalez.name": "Alvaro Gonzalez",
-    "story.alvaroGonzalez.detail": "Profesional",
 
     /* ---- Free Tryout ---- */
     "tryout.hero.badge": "100% Gratis · Sin Compromiso",
@@ -117,7 +111,6 @@ window.JBR_TRANSLATIONS = {
     "tryout.form.waiverCheckbox": "He leído y acepto la exención de responsabilidad para que mi hijo/a participe en el Free Tryout.",
     "tryout.form.submit": "Registrar mi Tryout Gratis",
     "tryout.form.devNote1": "Al enviar, se abrirá WhatsApp con tus datos ya escritos para que solo tengas que confirmar el envío al 407-686-4956.",
-    "tryout.form.legalNote": "⚠️ Aviso legal: el texto del waiver de arriba es un BORRADOR de referencia, no un documento legal válido todavía. Antes de publicar el sitio, debe ser redactado o revisado por un abogado en Florida — las exenciones de responsabilidad para menores de edad tienen reglas específicas por estado y no siempre son ejecutables tal cual.",
     "tryout.success.title": "¡Registro recibido!",
     "tryout.success.text": "Te contactaremos por WhatsApp para confirmar tu clase de evaluación gratuita.",
 
@@ -241,12 +234,18 @@ window.JBR_TRANSLATIONS = {
     "about.coaches.lead": "Experiencia real al más alto nivel del beisbol profesional, ahora enfocada en el desarrollo de tu hijo/a.",
 
     "about.success.eyebrow": "Historias de Éxito",
-    "about.success.title": "De JBR al Siguiente Nivel",
+    "about.success.title": "Jugadores que Vistieron la Camiseta JBR",
     "about.success.lead": "Jugadores que pasaron por la academia y llegaron a nivel universitario o profesional.",
 
     "about.visits.eyebrow": "Visitas Especiales",
     "about.visits.title": "Profesionales que Han Entrenado en JBR",
     "about.visits.lead": "Jugadores de MLB y ligas profesionales que han pasado por la academia — distinto de los egresados de arriba, estos son ex-peloteros que vinieron a entrenar o visitar.",
+    "visit.adrianAlmeida.name": "Adrian Almeida",
+    "visit.adrianAlmeida.detail": "Profesional",
+    "visit.alvaroGonzalez.name": "Alvaro Gonzalez",
+    "visit.alvaroGonzalez.detail": "Profesional",
+    "visit.hernanPerez.name": "Hernan Perez",
+    "visit.hernanPerez.detail": "Profesional",
     "visit.contrerasBoth.name": "Willson & William Contreras",
     "visit.contrerasBoth.detail": "Jugadores de MLB — off-season en JBR",
     "visit.williamContreras.name": "William Contreras",
@@ -296,8 +295,8 @@ window.JBR_TRANSLATIONS = {
     "home.stats.programsLabel": "Programs by Age",
 
     "home.success.eyebrow": "Success Stories",
-    "home.success.title": "From JBR to the Next Level",
-    "home.success.lead": "Players who came through the academy and went far — and MLB pros who have come to train with us.",
+    "home.success.title": "Stories That Inspire",
+    "home.success.lead": "Players who trained at JBR and went far, plus MLB professionals who have trained with us.",
     "home.success.viewMore": "Learn More About Us",
 
     "home.programs.eyebrow": "Programs",
@@ -327,8 +326,6 @@ window.JBR_TRANSLATIONS = {
 
     "story.xavierGori.name": "Xavier Gori",
     "story.xavierGori.detail": "Southeast Arkansas College",
-    "story.contreras.name": "Willson & William Contreras",
-    "story.contreras.detail": "MLB Players — trained at JBR",
     "story.anderElorriaga.name": "Ander Elorriaga",
     "story.anderElorriaga.detail": "D1 College",
     "story.carlosCordero.name": "Carlos Cordero",
@@ -339,8 +336,6 @@ window.JBR_TRANSLATIONS = {
     "story.fabianGavalo.detail": "College",
     "story.geronimoFermin.name": "Geronimo Fermin",
     "story.geronimoFermin.detail": "Arizona Diamondbacks Organization",
-    "story.hernanPerez.name": "Hernan Perez",
-    "story.hernanPerez.detail": "Professional",
     "story.jhoanderIrigoyen.name": "Jhoander Irigoyen",
     "story.jhoanderIrigoyen.detail": "Chicago Cubs Organization",
     "story.juanOrozco.name": "Juan Orozco",
@@ -351,8 +346,6 @@ window.JBR_TRANSLATIONS = {
     "story.miguelAllegri.detail": "College",
     "story.isaiasDucasse.name": "Isaias Ducasse",
     "story.isaiasDucasse.detail": "D1 College",
-    "story.alvaroGonzalez.name": "Alvaro Gonzalez",
-    "story.alvaroGonzalez.detail": "Professional",
 
     "tryout.hero.badge": "100% Free · No Obligation",
     "tryout.hero.title": "Register for Your <span>Free Tryout</span>",
@@ -382,7 +375,6 @@ window.JBR_TRANSLATIONS = {
     "tryout.form.waiverCheckbox": "I have read and accept the liability waiver for my child to participate in the Free Tryout.",
     "tryout.form.submit": "Register My Free Tryout",
     "tryout.form.devNote1": "When you submit, WhatsApp will open with your information pre-filled so you only need to confirm sending it to 407-686-4956.",
-    "tryout.form.legalNote": "⚠️ Legal notice: the waiver text above is a reference DRAFT, not a valid legal document yet. Before the site goes live, it must be drafted or reviewed by a Florida attorney — liability waivers for minors have state-specific rules and aren't always enforceable as written.",
     "tryout.success.title": "Registration received!",
     "tryout.success.text": "We'll contact you on WhatsApp to confirm your free evaluation class.",
 
@@ -502,12 +494,18 @@ window.JBR_TRANSLATIONS = {
     "about.coaches.lead": "Real experience at the highest level of professional baseball, now focused on your child's development.",
 
     "about.success.eyebrow": "Success Stories",
-    "about.success.title": "From JBR to the Next Level",
+    "about.success.title": "Players Who Wore the JBR Jersey",
     "about.success.lead": "Players who came through the academy and reached the college or professional level.",
 
     "about.visits.eyebrow": "Special Visits",
     "about.visits.title": "Professionals Who Have Trained at JBR",
     "about.visits.lead": "MLB and professional league players who have visited the academy — different from the alumni above, these are former pros who came to train or visit.",
+    "visit.adrianAlmeida.name": "Adrian Almeida",
+    "visit.adrianAlmeida.detail": "Professional",
+    "visit.alvaroGonzalez.name": "Alvaro Gonzalez",
+    "visit.alvaroGonzalez.detail": "Professional",
+    "visit.hernanPerez.name": "Hernan Perez",
+    "visit.hernanPerez.detail": "Professional",
     "visit.contrerasBoth.name": "Willson & William Contreras",
     "visit.contrerasBoth.detail": "MLB Players — off-season at JBR",
     "visit.williamContreras.name": "William Contreras",
