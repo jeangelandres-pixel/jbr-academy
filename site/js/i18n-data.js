@@ -250,8 +250,8 @@ window.JBR_TRANSLATIONS = {
     "visit.contrerasBoth.detail": "Jugadores de MLB — off-season en JBR",
     "visit.williamContreras.name": "William Contreras",
     "visit.williamContreras.detail": "Jugador de MLB — off-season en JBR",
-    "visit.albertoCastillo.name": "Alberto Castillo",
-    "visit.albertoCastillo.detail": "Ex-Catcher de MLB — visitó JBR",
+    "visit.aliCastillo.name": "Ali Castillo",
+    "visit.aliCastillo.detail": "Profesional — entrenó con nosotros",
 
     "about.media.eyebrow": "Fotos & Videos",
     "about.media.title": "Momentos de la Academia",
@@ -510,8 +510,8 @@ window.JBR_TRANSLATIONS = {
     "visit.contrerasBoth.detail": "MLB Players — off-season at JBR",
     "visit.williamContreras.name": "William Contreras",
     "visit.williamContreras.detail": "MLB Player — off-season at JBR",
-    "visit.albertoCastillo.name": "Alberto Castillo",
-    "visit.albertoCastillo.detail": "Former MLB Catcher — visited JBR",
+    "visit.aliCastillo.name": "Ali Castillo",
+    "visit.aliCastillo.detail": "Professional — trained with us",
 
     "about.media.eyebrow": "Photos & Videos",
     "about.media.title": "Moments at the Academy",
