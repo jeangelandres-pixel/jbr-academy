@@ -68,14 +68,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .brand-mark {
-  height: 100px;
+  height: 152px;
   width: auto;
   display: block;
 }
 
 @media (max-width: 480px) {
   .brand-mark {
-    height: 78px;
+    height: 104px;
   }
 }
 
@@ -738,6 +738,10 @@ footer.site-footer {
 
 .carousel-photo.pos-top img {
   object-position: top center;
+}
+
+.carousel-photo.pos-gavalo img {
+  object-position: 32% center;
 }
 
 .carousel-caption {

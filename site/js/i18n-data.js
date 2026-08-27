@@ -60,7 +60,7 @@ window.JBR_TRANSLATIONS = {
     "home.cta.call": "Llamar: 407-686-4956",
 
     "story.xavierGori.name": "Xavier Gori",
-    "story.xavierGori.detail": "Southeast Arkansas College",
+    "story.xavierGori.detail": "College",
     "story.anderElorriaga.name": "Ander Elorriaga",
     "story.anderElorriaga.detail": "D1 College",
     "story.carlosCordero.name": "Carlos Cordero",
@@ -325,7 +325,7 @@ window.JBR_TRANSLATIONS = {
     "home.cta.call": "Call: 407-686-4956",
 
     "story.xavierGori.name": "Xavier Gori",
-    "story.xavierGori.detail": "Southeast Arkansas College",
+    "story.xavierGori.detail": "College",
     "story.anderElorriaga.name": "Ander Elorriaga",
     "story.anderElorriaga.detail": "D1 College",
     "story.carlosCordero.name": "Carlos Cordero",
