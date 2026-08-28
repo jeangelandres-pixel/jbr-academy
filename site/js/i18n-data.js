@@ -18,7 +18,7 @@ window.JBR_TRANSLATIONS = {
 
     /* ---- Home ---- */
     "home.hero.badge": "Orlando & Kissimmee, FL",
-    "home.hero.title": "Entrena Como los Pros.<br>Juega Como los <span>Mejores</span>.",
+    "home.hero.title": "Entrena como los pros.<br>Juega como los <span>mejores</span>.",
     "home.hero.lead": "JBR Academy lleva más de 6 años formando jugadores de beisbol en el área de Orlando, con entrenamiento dirigido por ex-jugadores de Grandes Ligas. Desarrollo técnico, físico y mental para cada etapa del jugador.",
     "home.hero.ctaPrimary": "Regístrate a tu Tryout Gratis",
     "home.hero.ctaSecondary": "Escríbenos por WhatsApp",
@@ -30,32 +30,32 @@ window.JBR_TRANSLATIONS = {
     "home.stats.programsLabel": "Programas por Edad",
 
     "home.success.eyebrow": "Historias de Éxito",
-    "home.success.title": "Historias Que Inspiran",
+    "home.success.title": "Historias que inspiran",
     "home.success.lead": "Jugadores que se formaron en JBR y llegaron lejos, y profesionales de MLB que han entrenado con nosotros.",
-    "home.success.viewMore": "Conócenos Más",
+    "home.success.viewMore": "Conócenos más",
 
     "home.programs.eyebrow": "Programas",
-    "home.programs.title": "Un Programa para Cada Edad",
+    "home.programs.title": "Un programa para cada edad",
     "home.programs.lead": "Horarios fijos semanales, agrupados por edad para un desarrollo adecuado a cada etapa.",
     "home.programs.group1Tag": "4 a 9 años",
-    "home.programs.group1Title": "Fundamentos & Desarrollo Temprano",
+    "home.programs.group1Title": "Fundamentos y desarrollo temprano",
     "home.programs.group2Tag": "10 a 16 años",
-    "home.programs.group2Title": "Desarrollo Técnico & Competitivo",
+    "home.programs.group2Title": "Desarrollo técnico y competitivo",
     "home.programs.viewMore": "Ver Programas y Coaches",
 
     "home.why.eyebrow": "Por Qué JBR",
-    "home.why.title": "Una Academia, un Solo Objetivo: Tu Desarrollo",
-    "home.why.f1Title": "Trayectoria Comprobada",
+    "home.why.title": "Una academia, un solo objetivo: tu desarrollo",
+    "home.why.f1Title": "Trayectoria comprobada",
     "home.why.f1Text": "Más de 6 años formando jugadores en el área de Orlando y Kissimmee, FL.",
-    "home.why.f2Title": "Coaching de Nivel Profesional",
+    "home.why.f2Title": "Coaching de nivel profesional",
     "home.why.f2Text": "Dirigido por ex-jugadores de MLB y LVBP con experiencia real de alto nivel.",
-    "home.why.f3Title": "Desarrollo Integral",
+    "home.why.f3Title": "Desarrollo integral",
     "home.why.f3Text": "Trabajo técnico, físico y mental — no solo repetición de drills.",
-    "home.why.f4Title": "Programas por Edad",
+    "home.why.f4Title": "Programas por edad",
     "home.why.f4Text": "Grupos organizados de 4 a 16 años, con horarios fijos y predecibles para las familias.",
 
     "home.cta.eyebrow": "El Primer Paso Es Gratis",
-    "home.cta.title": "¿Listo para Ver de Qué Es Capaz Tu Hijo/a?",
+    "home.cta.title": "¿Listo para ver de qué es capaz tu hijo/a?",
     "home.cta.lead": "Agenda una clase de evaluación gratuita, sin compromiso. Un coach evaluará su nivel y te recomendará el mejor programa para empezar.",
     "home.cta.call": "Llamar: 407-686-4956",
 
@@ -84,13 +84,13 @@ window.JBR_TRANSLATIONS = {
 
     /* ---- Free Tryout ---- */
     "tryout.hero.badge": "100% Gratis · Sin Compromiso",
-    "tryout.hero.title": "Regístrate a Tu <span>Tryout Gratis</span>",
+    "tryout.hero.title": "Regístrate a tu <span>Tryout Gratis</span>",
     "tryout.hero.lead": "Un coach de JBR Academy evaluará el nivel de tu hijo/a y te recomendará el mejor programa para empezar. Cupos limitados por grupo de edad.",
 
     "tryout.info.title": "¿Qué incluye el tryout?",
     "tryout.info.text": "Una sesión de evaluación con uno de nuestros coaches, dentro del horario regular del grupo de edad correspondiente — bateo, defensa y una primera impresión del nivel actual de tu hijo/a.",
 
-    "tryout.faq.title": "Preguntas Frecuentes",
+    "tryout.faq.title": "Preguntas frecuentes",
     "tryout.faq.q1": "¿El tryout tiene costo?",
     "tryout.faq.a1": "No, es completamente gratis y sin compromiso de inscripción.",
     "tryout.faq.q2": "¿Qué debe traer mi hijo/a?",
@@ -100,14 +100,14 @@ window.JBR_TRANSLATIONS = {
     "tryout.faq.q4": "¿Qué pasa después del tryout?",
     "tryout.faq.a4": "Un coach conversará contigo sobre el progreso observado y el mejor programa para continuar el desarrollo de tu hijo/a.",
 
-    "tryout.form.title": "Formulario de Registro",
+    "tryout.form.title": "Formulario de registro",
     "tryout.form.parentName": "Nombre del padre/madre",
     "tryout.form.phone": "Teléfono (WhatsApp)",
     "tryout.form.phonePlaceholder": "(407) 000-0000",
     "tryout.form.childName": "Nombre del niño/a",
     "tryout.form.childAge": "Edad del niño/a",
-    "tryout.form.waiverTitle": "Exención de Responsabilidad (Waiver)",
-    "tryout.form.waiverBody": "<strong>JBR Academy — Exención de Responsabilidad, Autorización Médica y de Imagen (BORRADOR)</strong><br><br>Yo, como padre/madre o tutor legal, autorizo a mi hijo/a a participar en la clase de evaluación gratuita (\"Free Tryout\") de JBR Academy. Reconozco que el beisbol es una actividad física que conlleva riesgo de lesión, y por la presente libero a JBR Academy, sus coaches y representantes de responsabilidad por lesiones que puedan ocurrir durante la actividad, salvo negligencia comprobada.<br><br>Autorizo a JBR Academy a buscar atención médica de emergencia para mi hijo/a en caso de ser necesario. Autorizo también a JBR Academy a usar fotos y videos de mi hijo/a tomados durante actividades de la academia con fines promocionales (redes sociales, sitio web, materiales de marketing).<br><br>Declaro haber leído y comprendido este documento y participo de forma voluntaria.",
+    "tryout.form.waiverTitle": "Exención de responsabilidad (waiver)",
+    "tryout.form.waiverBody": "<strong>JBR Academy — Exención de responsabilidad, autorización médica y de imagen (BORRADOR)</strong><br><br>Yo, como padre/madre o tutor legal, autorizo a mi hijo/a a participar en la clase de evaluación gratuita (\"Free Tryout\") de JBR Academy. Reconozco que el beisbol es una actividad física que conlleva riesgo de lesión, y por la presente libero a JBR Academy, sus coaches y representantes de responsabilidad por lesiones que puedan ocurrir durante la actividad, salvo negligencia comprobada.<br><br>Autorizo a JBR Academy a buscar atención médica de emergencia para mi hijo/a en caso de ser necesario. Autorizo también a JBR Academy a usar fotos y videos de mi hijo/a tomados durante actividades de la academia con fines promocionales (redes sociales, sitio web, materiales de marketing).<br><br>Declaro haber leído y comprendido este documento y participo de forma voluntaria.",
     "tryout.form.waiverCheckbox": "He leído y acepto la exención de responsabilidad para que mi hijo/a participe en el Free Tryout.",
     "tryout.form.submit": "Registrar mi Tryout Gratis",
     "tryout.form.devNote1": "Al enviar, se abrirá WhatsApp con tus datos ya escritos para que solo tengas que confirmar el envío al 407-686-4956.",
@@ -116,22 +116,22 @@ window.JBR_TRANSLATIONS = {
 
     /* ---- Programas & Coaches ---- */
     "programs.hero.eyebrow": "Programas & Coaches",
-    "programs.hero.title": "Un Programa para Cada Etapa",
+    "programs.hero.title": "Un programa para cada etapa",
     "programs.hero.lead": "Grupos organizados por edad, con horarios fijos semanales y entrenamiento dirigido por coaches con trayectoria profesional real.",
 
     "programs.schedule.eyebrow": "Horarios",
-    "programs.schedule.title": "Horario Semanal por Grupo de Edad",
+    "programs.schedule.title": "Horario semanal por grupo de edad",
     "programs.schedule.lead": "Cupos limitados por grupo — capacidad total de la academia: 100 jugadores.",
     "programs.group1.tag": "4 a 9 años",
-    "programs.group1.title": "Fundamentos & Desarrollo Temprano",
+    "programs.group1.title": "Fundamentos y desarrollo temprano",
     "programs.group1.text": "Introducción a los fundamentos del beisbol: bateo, lanzamiento, fildeo y coordinación, en un ambiente adecuado para los más pequeños.",
     "programs.group2.tag": "10 a 16 años",
-    "programs.group2.title": "Desarrollo Técnico & Competitivo",
+    "programs.group2.title": "Desarrollo técnico y competitivo",
     "programs.group2.text": "Trabajo técnico más avanzado en bateo, defensa y estrategia de juego, con enfoque en preparación para equipos escolares y competitivos.",
     "programs.viewTryout": "Regístrate a tu Tryout Gratis",
 
     "programs.team.eyebrow": "Nuestro Equipo",
-    "programs.team.title": "Coaches con Trayectoria Profesional Real",
+    "programs.team.title": "Coaches con trayectoria profesional real",
     "programs.team.lead": "No es marketing — es experiencia real jugando y entrenando al más alto nivel del beisbol profesional.",
 
     "coach.tomasPerez.name": "Tomas Perez",
@@ -154,12 +154,12 @@ window.JBR_TRANSLATIONS = {
     "coach.gilbertRondon.role": "Coach",
     "coach.gilbertRondon.b1": "Parte del staff de coaches de JBR Academy",
 
-    "programs.cta.title": "¿Listo para Empezar?",
+    "programs.cta.title": "¿Listo para empezar?",
     "programs.cta.lead": "Agenda tu clase de evaluación gratuita hoy mismo.",
 
     /* ---- Contacto ---- */
     "contact.hero.eyebrow": "Contacto & Ubicación",
-    "contact.hero.title": "Hablemos sobre el Desarrollo de tu Hijo/a",
+    "contact.hero.title": "Hablemos sobre el desarrollo de tu hijo/a",
     "contact.hero.lead": "Escríbenos por WhatsApp, llámanos, o regístrate directamente a tu tryout gratuito.",
     "contact.location.title": "Ubicación",
     "contact.location.text": "South Orange Little League Complex<br>Orlando / Kissimmee Area, FL",
@@ -170,13 +170,13 @@ window.JBR_TRANSLATIONS = {
 
     /* ---- Uniformes ---- */
     "uniforms.hero.eyebrow": "Uniforme Oficial",
-    "uniforms.hero.title": "Viste los Colores de <span>JBR Academy</span>",
+    "uniforms.hero.title": "Viste los colores de <span>JBR Academy</span>",
     "uniforms.hero.lead": "Ordena el uniforme oficial de tu jugador/a. Completa la planilla con los datos exactos y te contactamos por WhatsApp para confirmar el pedido.",
-    "uniforms.hero.ctaOrder": "Ordenar Uniforme",
+    "uniforms.hero.ctaOrder": "Ordenar uniforme",
     "uniforms.hero.ctaAsk": "Preguntar por WhatsApp",
 
     "uniforms.gallery.eyebrow": "Nuestra Mascota",
-    "uniforms.gallery.title": "Así se Ven los Uniformes JBR",
+    "uniforms.gallery.title": "Así se ven los uniformes JBR",
     "uniforms.gallery.lead": "Conoce a nuestra mascota luciendo las opciones de uniforme disponibles.",
     "uniforms.gallery.home": "Home",
     "uniforms.gallery.homeDetail": "Uniforme de juegos en casa",
@@ -187,7 +187,7 @@ window.JBR_TRANSLATIONS = {
     "uniforms.gallery.note": "Fotos de equipos y torneos con el uniforme oficial próximamente — los equipos actuales son nuevos y aún no tienen sesión de fotos.",
 
     "uniforms.form.eyebrow": "Planilla de Pedido",
-    "uniforms.form.title": "Datos para tu Uniforme",
+    "uniforms.form.title": "Datos para tu uniforme",
     "uniforms.form.lead": "Esta es la información que necesita el proveedor para fabricar el uniforme. Al enviar, se abre WhatsApp con todo listo para confirmar.",
     "uniforms.form.playerName": "Nombre completo del jugador/a",
     "uniforms.form.jerseyNumber": "Número deseado en la camiseta",
@@ -219,26 +219,26 @@ window.JBR_TRANSLATIONS = {
     "uniforms.form.phonePh": "(407) 000-0000",
     "uniforms.form.notes": "Notas adicionales",
     "uniforms.form.notesPh": "Alergias a materiales, ajustes especiales, etc. (opcional)",
-    "uniforms.form.submit": "Enviar Pedido por WhatsApp",
+    "uniforms.form.submit": "Enviar pedido por WhatsApp",
     "uniforms.form.priceNote": "Precio por set aún por definir con el proveedor — se confirma por WhatsApp junto con el pedido.",
     "uniforms.success.title": "¡Pedido enviado!",
     "uniforms.success.text": "Te confirmaremos precio y tiempo de entrega por WhatsApp.",
 
     /* ---- Conócenos ---- */
     "about.hero.eyebrow": "Conócenos",
-    "about.hero.title": "La Gente y la Historia Detrás de <span>JBR Academy</span>",
+    "about.hero.title": "La gente y la historia detrás de <span>JBR Academy</span>",
     "about.hero.lead": "Nuestros coaches, jugadores que llegaron lejos, profesionales que nos han visitado, y lo que dicen las familias JBR.",
 
     "about.coaches.eyebrow": "Nuestros Coaches",
-    "about.coaches.title": "Entrenados por Ex-Jugadores de Grandes Ligas",
+    "about.coaches.title": "Entrenados por ex-jugadores de Grandes Ligas",
     "about.coaches.lead": "Experiencia real al más alto nivel del beisbol profesional, ahora enfocada en el desarrollo de tu hijo/a.",
 
     "about.success.eyebrow": "Historias de Éxito",
-    "about.success.title": "Jugadores que Vistieron la Camiseta JBR",
+    "about.success.title": "Jugadores que vistieron la camiseta JBR",
     "about.success.lead": "Jugadores que pasaron por la academia y llegaron a nivel universitario o profesional.",
 
     "about.visits.eyebrow": "Visitas Especiales",
-    "about.visits.title": "Profesionales que Han Entrenado en JBR",
+    "about.visits.title": "Profesionales que han entrenado en JBR",
     "about.visits.lead": "Jugadores de MLB y ligas profesionales que han pasado por la academia — distinto de los egresados de arriba, estos son ex-peloteros que vinieron a entrenar o visitar.",
     "visit.adrianAlmeida.name": "Adrian Almeida",
     "visit.adrianAlmeida.detail": "Profesional",
@@ -254,15 +254,15 @@ window.JBR_TRANSLATIONS = {
     "visit.aliCastillo.detail": "Profesional — entrenó con nosotros",
 
     "about.media.eyebrow": "Fotos & Videos",
-    "about.media.title": "Momentos de la Academia",
+    "about.media.title": "Momentos de la academia",
     "about.media.lead": "Nuestra fiesta de 2do Aniversario y la vida diaria de la academia.",
 
     "about.testimonials.eyebrow": "Testimonios",
-    "about.testimonials.title": "Lo Que Dicen los Padres",
+    "about.testimonials.title": "Lo que dicen los padres",
     "about.testimonials.lead": "Aún no tenemos testimonios cargados — se agregan aquí a medida que los vayamos recopilando.",
     "about.testimonials.soon": "Testimonio próximamente",
 
-    "about.cta.title": "¿Quieres Ver Esto en Persona?",
+    "about.cta.title": "¿Quieres ver esto en persona?",
     "about.cta.lead": "Agenda una clase de evaluación gratuita y conoce la academia."
   },
 

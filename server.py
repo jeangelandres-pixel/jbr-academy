@@ -55,6 +55,14 @@ class Handler(SimpleHTTPRequestHandler):
         # Log mas corto y legible en la terminal
         print("[server]", self.address_string(), "-", fmt % args)
 
+    def end_headers(self):
+        # Sin esto, los navegadores cachean HTML/imagenes agresivamente y
+        # los visitantes que ya vieron el sitio no ven las actualizaciones
+        # hasta forzar un refresh. "no-cache" obliga a revalidar (If-Modified-Since)
+        # en cada carga, sin dejar de aprovechar 304 Not Modified cuando no cambio nada.
+        self.send_header("Cache-Control", "no-cache")
+        super().end_headers()
+
     def _json_response(self, status, payload):
         body = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(status)
