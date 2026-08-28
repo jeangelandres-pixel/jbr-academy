@@ -15,6 +15,7 @@
       uniformGroup: document.getElementById("uniformGroup").value,
       position: document.getElementById("position").value || "No especificada",
       size: document.getElementById("size").value,
+      pantsLength: document.getElementById("pantsLength").value,
       pieces: document.getElementById("pieces").value,
       quantity: document.getElementById("quantity").value,
       phone: document.getElementById("uniformPhone").value,
@@ -39,6 +40,7 @@
       "Grupo/Programa: " + data.uniformGroup + "\n" +
       "Posición: " + data.position + "\n" +
       "Talla: " + data.size + "\n" +
+      "Largo del pantalón: " + data.pantsLength + "\n" +
       "Piezas: " + data.pieces + "\n" +
       "Cantidad: " + data.quantity + "\n" +
       "Teléfono: " + data.phone + "\n" +
