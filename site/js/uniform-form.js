@@ -15,6 +15,10 @@
       uniformGroup: document.getElementById("uniformGroup").value,
       position: document.getElementById("position").value || "No especificada",
       size: document.getElementById("size").value,
+      capSize: document.getElementById("capSize").value,
+      jerseySize: document.getElementById("jerseySize").value,
+      pantsSize: document.getElementById("pantsSize").value,
+      shortsSize: document.getElementById("shortsSize").value,
       pantsLength: document.getElementById("pantsLength").value,
       pieces: document.getElementById("pieces").value,
       quantity: document.getElementById("quantity").value,
@@ -40,6 +44,10 @@
       "Grupo/Programa: " + data.uniformGroup + "\n" +
       "Posición: " + data.position + "\n" +
       "Talla: " + data.size + "\n" +
+      "Talla de la gorra: " + data.capSize + "\n" +
+      "Talla de la jersey: " + data.jerseySize + "\n" +
+      "Talla del pantalón: " + data.pantsSize + "\n" +
+      "Talla del short de práctica: " + data.shortsSize + "\n" +
       "Largo del pantalón: " + data.pantsLength + "\n" +
       "Piezas: " + data.pieces + "\n" +
       "Cantidad: " + data.quantity + "\n" +

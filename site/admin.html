@@ -67,7 +67,8 @@
       <thead>
         <tr>
           <th>Recibido</th><th>Jugador/a</th><th>Nombre camiseta</th><th>Número</th>
-          <th>Grupo</th><th>Posición</th><th>Talla</th><th>Piezas</th><th>Cant.</th>
+          <th>Grupo</th><th>Posición</th><th>Talla</th><th>Gorra</th><th>Jersey</th>
+          <th>Pantalón</th><th>Short práctica</th><th>Largo pantalón</th><th>Piezas</th><th>Cant.</th>
           <th>Teléfono</th><th>Notas</th>
         </tr>
       </thead>
@@ -165,6 +166,11 @@ function loadOrders() {
         "<td>" + (o.uniformGroup || "") + "</td>" +
         "<td>" + (o.position || "") + "</td>" +
         "<td>" + (o.size || "") + "</td>" +
+        "<td>" + (o.capSize || "") + "</td>" +
+        "<td>" + (o.jerseySize || "") + "</td>" +
+        "<td>" + (o.pantsSize || "") + "</td>" +
+        "<td>" + (o.shortsSize || "") + "</td>" +
+        "<td>" + (o.pantsLength || "") + "</td>" +
         "<td>" + (o.pieces || "") + "</td>" +
         "<td>" + (o.quantity || "") + "</td>" +
         "<td>" + (o.phone || "") + "</td>" +
@@ -180,6 +186,11 @@ function loadOrders() {
         { label: "Numero", get: function (r) { return r.jerseyNumber; } },
         { label: "Grupo", get: function (r) { return r.uniformGroup; } },
         { label: "Talla", get: function (r) { return r.size; } },
+        { label: "Talla gorra", get: function (r) { return r.capSize; } },
+        { label: "Talla jersey", get: function (r) { return r.jerseySize; } },
+        { label: "Talla pantalon", get: function (r) { return r.pantsSize; } },
+        { label: "Talla short practica", get: function (r) { return r.shortsSize; } },
+        { label: "Largo pantalon", get: function (r) { return r.pantsLength; } },
         { label: "Piezas", get: function (r) { return r.pieces; } },
         { label: "Cantidad", get: function (r) { return r.quantity; } },
         { label: "Telefono", get: function (r) { return r.phone; } }
