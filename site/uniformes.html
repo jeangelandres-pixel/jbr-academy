@@ -121,11 +121,7 @@
           <div class="grid-2">
             <div class="form-row">
               <label for="uniformGroup" data-i18n="uniforms.form.group">Grupo / Programa</label>
-              <select id="uniformGroup" required>
-                <option value="" data-i18n="uniforms.form.select">Selecciona...</option>
-                <option value="4-9 años" data-i18n="uniforms.form.group1">4 a 9 años</option>
-                <option value="10-16 años" data-i18n="uniforms.form.group2">10 a 16 años</option>
-              </select>
+              <input type="text" id="uniformGroup" placeholder="Ej. 4 a 9 años" data-i18n-placeholder="uniforms.form.groupPh" required>
             </div>
             <div class="form-row">
               <label for="position" data-i18n="uniforms.form.position">Posición principal</label>
@@ -136,100 +132,40 @@
           <div class="grid-2">
             <div class="form-row">
               <label for="size" data-i18n="uniforms.form.size">Talla</label>
-              <select id="size" required>
-                <option value="" data-i18n="uniforms.form.select">Selecciona...</option>
-                <option value="Niño XS" data-i18n="uniforms.form.sizeKidsXS">Niño XS</option>
-                <option value="Niño S" data-i18n="uniforms.form.sizeKidsS">Niño S</option>
-                <option value="Niño M" data-i18n="uniforms.form.sizeKidsM">Niño M</option>
-                <option value="Niño L" data-i18n="uniforms.form.sizeKidsL">Niño L</option>
-                <option value="Adulto S" data-i18n="uniforms.form.sizeAdultS">Adulto S</option>
-                <option value="Adulto M" data-i18n="uniforms.form.sizeAdultM">Adulto M</option>
-                <option value="Adulto L" data-i18n="uniforms.form.sizeAdultL">Adulto L</option>
-                <option value="Adulto XL" data-i18n="uniforms.form.sizeAdultXL">Adulto XL</option>
-              </select>
+              <input type="text" id="size" placeholder="Ej. Niño M, Adulto L" data-i18n-placeholder="uniforms.form.sizePh" required>
             </div>
             <div class="form-row">
               <label for="pieces" data-i18n="uniforms.form.pieces">Piezas necesitadas</label>
-              <select id="pieces" required>
-                <option value="" data-i18n="uniforms.form.select">Selecciona...</option>
-                <option value="Set completo (jersey + pantalón + gorra + medias)" data-i18n="uniforms.form.piecesFull">Set completo (jersey + pantalón + gorra + medias)</option>
-                <option value="Solo jersey" data-i18n="uniforms.form.piecesJersey">Solo jersey</option>
-                <option value="Jersey + gorra" data-i18n="uniforms.form.piecesJerseyCap">Jersey + gorra</option>
-                <option value="Otro (especificar en notas)" data-i18n="uniforms.form.piecesOther">Otro (especificar en notas)</option>
-              </select>
+              <input type="text" id="pieces" placeholder="Ej. Set completo (jersey + pantalón + gorra + medias)" data-i18n-placeholder="uniforms.form.piecesPh" required>
             </div>
           </div>
 
           <div class="grid-2">
             <div class="form-row">
               <label for="capSize" data-i18n="uniforms.form.capSize">Talla de la gorra</label>
-              <select id="capSize" required>
-                <option value="" data-i18n="uniforms.form.select">Selecciona...</option>
-                <option value="Niño XS" data-i18n="uniforms.form.sizeKidsXS">Niño XS</option>
-                <option value="Niño S" data-i18n="uniforms.form.sizeKidsS">Niño S</option>
-                <option value="Niño M" data-i18n="uniforms.form.sizeKidsM">Niño M</option>
-                <option value="Niño L" data-i18n="uniforms.form.sizeKidsL">Niño L</option>
-                <option value="Adulto S" data-i18n="uniforms.form.sizeAdultS">Adulto S</option>
-                <option value="Adulto M" data-i18n="uniforms.form.sizeAdultM">Adulto M</option>
-                <option value="Adulto L" data-i18n="uniforms.form.sizeAdultL">Adulto L</option>
-                <option value="Adulto XL" data-i18n="uniforms.form.sizeAdultXL">Adulto XL</option>
-              </select>
+              <input type="text" id="capSize" placeholder="Ej. Niño M, Adulto L" data-i18n-placeholder="uniforms.form.sizePh" required>
             </div>
             <div class="form-row">
               <label for="jerseySize" data-i18n="uniforms.form.jerseySize">Talla de la jersey</label>
-              <select id="jerseySize" required>
-                <option value="" data-i18n="uniforms.form.select">Selecciona...</option>
-                <option value="Niño XS" data-i18n="uniforms.form.sizeKidsXS">Niño XS</option>
-                <option value="Niño S" data-i18n="uniforms.form.sizeKidsS">Niño S</option>
-                <option value="Niño M" data-i18n="uniforms.form.sizeKidsM">Niño M</option>
-                <option value="Niño L" data-i18n="uniforms.form.sizeKidsL">Niño L</option>
-                <option value="Adulto S" data-i18n="uniforms.form.sizeAdultS">Adulto S</option>
-                <option value="Adulto M" data-i18n="uniforms.form.sizeAdultM">Adulto M</option>
-                <option value="Adulto L" data-i18n="uniforms.form.sizeAdultL">Adulto L</option>
-                <option value="Adulto XL" data-i18n="uniforms.form.sizeAdultXL">Adulto XL</option>
-              </select>
+              <input type="text" id="jerseySize" placeholder="Ej. Niño M, Adulto L" data-i18n-placeholder="uniforms.form.sizePh" required>
             </div>
           </div>
 
           <div class="grid-2">
             <div class="form-row">
               <label for="pantsSize" data-i18n="uniforms.form.pantsSize">Talla del pantalón</label>
-              <select id="pantsSize" required>
-                <option value="" data-i18n="uniforms.form.select">Selecciona...</option>
-                <option value="Niño XS" data-i18n="uniforms.form.sizeKidsXS">Niño XS</option>
-                <option value="Niño S" data-i18n="uniforms.form.sizeKidsS">Niño S</option>
-                <option value="Niño M" data-i18n="uniforms.form.sizeKidsM">Niño M</option>
-                <option value="Niño L" data-i18n="uniforms.form.sizeKidsL">Niño L</option>
-                <option value="Adulto S" data-i18n="uniforms.form.sizeAdultS">Adulto S</option>
-                <option value="Adulto M" data-i18n="uniforms.form.sizeAdultM">Adulto M</option>
-                <option value="Adulto L" data-i18n="uniforms.form.sizeAdultL">Adulto L</option>
-                <option value="Adulto XL" data-i18n="uniforms.form.sizeAdultXL">Adulto XL</option>
-              </select>
+              <input type="text" id="pantsSize" placeholder="Ej. Niño M, Adulto L" data-i18n-placeholder="uniforms.form.sizePh" required>
             </div>
             <div class="form-row">
               <label for="shortsSize" data-i18n="uniforms.form.shortsSize">Talla del short de práctica</label>
-              <select id="shortsSize" required>
-                <option value="" data-i18n="uniforms.form.select">Selecciona...</option>
-                <option value="Niño XS" data-i18n="uniforms.form.sizeKidsXS">Niño XS</option>
-                <option value="Niño S" data-i18n="uniforms.form.sizeKidsS">Niño S</option>
-                <option value="Niño M" data-i18n="uniforms.form.sizeKidsM">Niño M</option>
-                <option value="Niño L" data-i18n="uniforms.form.sizeKidsL">Niño L</option>
-                <option value="Adulto S" data-i18n="uniforms.form.sizeAdultS">Adulto S</option>
-                <option value="Adulto M" data-i18n="uniforms.form.sizeAdultM">Adulto M</option>
-                <option value="Adulto L" data-i18n="uniforms.form.sizeAdultL">Adulto L</option>
-                <option value="Adulto XL" data-i18n="uniforms.form.sizeAdultXL">Adulto XL</option>
-              </select>
+              <input type="text" id="shortsSize" placeholder="Ej. Niño M, Adulto L" data-i18n-placeholder="uniforms.form.sizePh" required>
             </div>
           </div>
 
           <div class="grid-2">
             <div class="form-row">
               <label for="pantsLength" data-i18n="uniforms.form.pantsLength">Largo del pantalón</label>
-              <select id="pantsLength" required>
-                <option value="" data-i18n="uniforms.form.select">Selecciona...</option>
-                <option value="Corto" data-i18n="uniforms.form.pantsShort">Corto</option>
-                <option value="Largo" data-i18n="uniforms.form.pantsLong">Largo</option>
-              </select>
+              <input type="text" id="pantsLength" placeholder="Ej. Corto o Largo" data-i18n-placeholder="uniforms.form.pantsLengthPh" required>
             </div>
             <div class="form-row">
               <label for="quantity" data-i18n="uniforms.form.quantity">Cantidad</label>
@@ -296,7 +232,7 @@
   </div>
 </footer>
 
-<script src="js/i18n-data.js?v=8"></script>
+<script src="js/i18n-data.js?v=9"></script>
 <script src="js/i18n.js"></script>
 <script src="js/uniform-form.js?v=5"></script>
 </body>
