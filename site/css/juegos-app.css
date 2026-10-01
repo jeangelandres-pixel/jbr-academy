@@ -40,14 +40,14 @@
   background:var(--p-paper);color:var(--p-ink);border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(11,31,58,.18);
   display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);font-family:var(--body);position:relative}
 .jbr-games .poster.exporting{width:1080px;border-radius:0;box-shadow:none}
-.jbr-games .p-head{grid-column:1/-1;background:var(--p-navy);color:#fff;display:flex;align-items:center;gap:18px;padding:18px 24px;position:relative;overflow:hidden}
+.jbr-games .p-head{grid-column:1/-1;background:var(--p-navy);color:#fff;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;padding:18px 24px;position:relative;overflow:hidden}
 .jbr-games .p-head::after{content:"";position:absolute;right:-60px;top:0;bottom:0;width:340px;background:repeating-linear-gradient(115deg,transparent 0 22px,rgba(255,255,255,.06) 22px 44px);pointer-events:none}
 .jbr-games .p-head .stripe{position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--p-silver) 0 70%,var(--p-black) 70%)}
 .jbr-games .p-logo{width:76px;height:76px;flex:none;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;border:3px solid #fff}
 .jbr-games .bgimg{display:block;width:100%;height:100%;background:center/contain no-repeat}
 .jbr-games .p-logo.wide{width:128px;height:92px;border-radius:0;background:transparent;border:0}
 .jbr-games .p-logo .ini{font-family:var(--display);font-weight:900;font-size:34px;color:var(--p-navy)}
-.jbr-games .p-titles{min-width:0;display:flex;flex-direction:column;gap:2px;z-index:1}
+.jbr-games .p-titles{flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:2px;z-index:1}
 .jbr-games .p-acad{font-family:var(--cond);font-weight:700;font-size:16px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
 .jbr-games .p-month{font-family:var(--display);font-style:italic;font-weight:900;font-size:56px;line-height:.9;text-transform:uppercase;letter-spacing:.01em}
 .jbr-games .p-month span{color:var(--p-silver)}
@@ -219,7 +219,12 @@
 .jbr-games .scorein input{font-family:var(--display);font-weight:900;font-size:34px;text-align:center;padding:6px}
 .jbr-games .scorein .vs2{font-family:var(--cond);font-weight:700;color:var(--muted);padding-bottom:14px}
 @media (max-width:760px){.jbr-games .b-body{padding:14px}
-.jbr-games .score b{font-size:26px}}
+.jbr-games .score b{font-size:26px}
+.jbr-games .board .p-head{padding:16px}
+.jbr-games .board .p-month{font-size:40px}
+.jbr-games .board .p-logo.wide{width:96px;height:69px}
+.jbr-games .board .p-cat b{font-size:34px}
+.jbr-games .tabs button{padding:10px 10px;font-size:16px}}
 .jbr-games .scrim{position:fixed;inset:0;background:rgba(5,10,20,.55);display:grid;place-items:center;padding:16px;z-index:50;overflow-y:auto}
 .jbr-games .dlg{background:var(--surface);color:var(--fg);border-radius:14px;width:100%;max-width:560px;max-height:calc(100dvh - 32px);overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.35)}
 .jbr-games .dlg header{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:1}
