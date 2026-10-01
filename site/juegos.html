@@ -3,10 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto y Ubicación | JBR Academy</title>
-<meta name="description" content="Contacta a JBR Academy en Orlando, FL — South Orange Little League Complex. WhatsApp, teléfono e Instagram.">
+<title>Juegos | JBR Academy</title>
+<meta name="description" content="Calendario de juegos, resultados y estadísticas de JBR Academy por categoría.">
 <link rel="stylesheet" href="css/styles.css?v=8">
 <link rel="stylesheet" href="css/i18n.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&family=Saira+Extra+Condensed:ital,wght@0,700;0,800;0,900;1,800;1,900&display=swap">
+<link rel="stylesheet" href="css/juegos-app.css?v=1">
+<style>.jbr-games{background:transparent}.jbr-games .wrap{max-width:none;padding-inline:0;padding-block:0}</style>
 </head>
 <body>
 
@@ -19,9 +24,9 @@
       <a href="index.html" data-i18n="nav.home">Inicio</a>
       <a href="tryout.html" data-i18n="nav.tryout">Free Tryout</a>
       <a href="programas.html" data-i18n="nav.programs">Programas &amp; Coaches</a>
-      <a href="contacto.html" class="active" data-i18n="nav.contact">Contacto</a>
+      <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
       <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
-      <a href="juegos.html" data-i18n="nav.games">Juegos</a>
+      <a href="juegos.html" class="active" data-i18n="nav.games">Juegos</a>
       <a href="conocenos.html" data-i18n="nav.about">Conócenos</a>
     </nav>
     <div class="lang-switch">
@@ -46,58 +51,19 @@
   </div>
 </header>
 
-<section class="hero" style="padding: 48px 0 56px;">
+<section class="hero" style="padding: 44px 0 48px;">
   <div class="container">
-    <span class="eyebrow" data-i18n="contact.hero.eyebrow">Contacto &amp; Ubicación</span>
-    <h1 data-i18n="contact.hero.title">Hablemos sobre el desarrollo de tu hijo/a</h1>
-    <p class="lead" data-i18n="contact.hero.lead">Escríbenos por WhatsApp, llámanos, o regístrate directamente
-      a tu tryout gratuito.</p>
+    <span class="eyebrow" data-i18n="games.hero.eyebrow">Temporada 2026</span>
+    <h1 data-i18n-html="games.hero.title">Juegos de <span>JBR Academy</span></h1>
+    <p class="lead" data-i18n="games.hero.lead">Calendario, resultados y estadísticas de cada categoría: dónde jugamos, contra quién, a qué hora y cómo nos fue.</p>
   </div>
 </section>
 
-<section>
+<section style="padding: 32px 0 64px;">
   <div class="container">
-    <div class="contact-grid">
-      <div>
-        <div class="contact-item">
-          <div class="feature-icon">📍</div>
-          <div>
-            <h4 data-i18n="contact.location.title">Ubicación</h4>
-            <p data-i18n-html="contact.location.text">South Orange Little League Complex<br>Orlando / Kissimmee Area, FL</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="feature-icon">💬</div>
-          <div>
-            <h4 data-i18n="contact.whatsapp.title">WhatsApp</h4>
-            <p><a href="https://wa.me/14076864956" target="_blank" rel="noopener">407-686-4956</a><br>
-              <span data-i18n="contact.whatsapp.text">Respuesta más rápida — nuestro canal principal de contacto.</span></p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="feature-icon">📞</div>
-          <div>
-            <h4 data-i18n="contact.phone.title">Teléfono</h4>
-            <p><a href="tel:+14076864956">407-686-4956</a></p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="feature-icon">📷</div>
-          <div>
-            <h4 data-i18n="contact.instagram.title">Instagram</h4>
-            <p><a href="https://www.instagram.com/jbracademy/" target="_blank" rel="noopener">@jbracademy</a></p>
-          </div>
-        </div>
-
-        <a href="tryout.html" class="btn btn-white" style="margin-top:10px;" data-i18n="home.hero.ctaPrimary">Regístrate a tu Tryout Gratis</a>
-      </div>
-
-      <div class="map-frame">
-        <iframe
-          src="https://maps.google.com/maps?q=South%20Orange%20Little%20League%20Complex%2C%20Orlando%2C%20FL&t=&z=13&ie=UTF8&iwloc=&output=embed"
-          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Ubicación de JBR Academy"></iframe>
-      </div>
+    <div class="jbr-games">
+      <template id="app-shell"><div class="wrap" id="app"></div></template>
+      <div id="root"></div>
     </div>
   </div>
 </section>
@@ -132,7 +98,23 @@
   </div>
 </footer>
 
+<script type="application/json" id="app-state">null</script>
 <script src="js/i18n-data.js?v=10"></script>
 <script src="js/i18n.js"></script>
+<script>
+  window.JBR_VIEWER = true;
+  (function () {
+    function load(src, cb) { var s = document.createElement("script"); s.src = src; s.onload = cb; s.onerror = cb; document.body.appendChild(s); }
+    fetch("juegos/juegos.json?v=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d) document.getElementById("app-state").textContent = JSON.stringify(d); })
+      .catch(function () {})
+      .then(function () {
+        load("https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js", function () {
+          load("js/juegos-app.js?v=1");
+        });
+      });
+  })();
+</script>
 </body>
 </html>

@@ -7,6 +7,10 @@ window.JBR_TRANSLATIONS = {
     "nav.contact": "Contacto",
     "nav.uniforms": "Uniformes",
     "nav.about": "Conócenos",
+    "nav.games": "Juegos",
+    "games.hero.eyebrow": "Temporada 2026",
+    "games.hero.title": "Juegos de <span>JBR Academy</span>",
+    "games.hero.lead": "Calendario, resultados y estadísticas de cada categoría: dónde jugamos, contra quién, a qué hora y cómo nos fue.",
     "nav.ctaButton": "Tryout Gratis",
 
     "footer.brandTitle": "JBR Academy",
@@ -283,6 +287,10 @@ window.JBR_TRANSLATIONS = {
     "nav.contact": "Contact",
     "nav.uniforms": "Uniforms",
     "nav.about": "About Us",
+    "nav.games": "Games",
+    "games.hero.eyebrow": "2026 Season",
+    "games.hero.title": "JBR Academy <span>Games</span>",
+    "games.hero.lead": "Schedule, results and stats for every division: where we play, who we play, what time, and how we did.",
     "nav.ctaButton": "Free Tryout",
 
     "footer.brandTitle": "JBR Academy",
