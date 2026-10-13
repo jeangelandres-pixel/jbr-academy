@@ -884,16 +884,33 @@ async function copyText(){
 }
 async function exportImage(){
   const p=$("#poster"); if(!p) return;
-  if(typeof html2canvas!=="function"){ toast("La imagen no está disponible ahora. Usa “Copiar para WhatsApp”."); return; }
+  const MS=window.modernScreenshot;
+  if(!(MS && MS.domToCanvas) && typeof html2canvas!=="function"){ toast("La imagen no está disponible ahora. Usa “Copiar para WhatsApp”."); return; }
   toast("Generando imagen…");
   const wasEdit=editing; if(wasEdit){ editing=false; render(); }
   const el=$("#poster"); el.classList.add("exporting");
   try{ if(document.fonts && document.fonts.ready) await document.fonts.ready; }catch(e){}
-  let canvas;
-  try{ canvas=await html2canvas(el,{scale:2,backgroundColor:"#ffffff",useCORS:true,logging:false,windowWidth:1200}); }
-  catch(e){ toast("No se pudo generar la imagen"); }
+  // Esperar a que todas las letras usadas estén cargadas (evita textos corridos en el celular)
+  try{ if(document.fonts && document.fonts.load){ await Promise.all(["400 16px Barlow","600 16px Barlow","700 16px Barlow","600 16px 'Barlow Condensed'","700 16px 'Barlow Condensed'","800 16px 'Saira Extra Condensed'","900 16px 'Saira Extra Condensed'"].map(f=>document.fonts.load(f))); } }catch(e){}
+  await Promise.race([new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))), new Promise(r=>setTimeout(r,150))]);
+  const W=el.offsetWidth, H=el.offsetHeight;
+  const blank=c=>{ try{ const t=document.createElement("canvas"); t.width=24; t.height=24; const x=t.getContext("2d"); x.drawImage(c,0,0,24,24); const d=x.getImageData(0,0,24,24).data; let mn=255,mx=0; for(let i=0;i<d.length;i+=4){ const v=d[i]+d[i+1]+d[i+2]; if(v<mn)mn=v; if(v>mx)mx=v; } return (mx-mn)<30; }catch(e){ return false; } };
+  let canvas=null;
+  if(MS && MS.domToCanvas){
+    try{
+      canvas=await Promise.race([
+        MS.domToCanvas(el,{scale:2,width:W,height:H,backgroundColor:"#ffffff",timeout:20000}),
+        new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")),25000))
+      ]);
+      if(!canvas || !canvas.width || blank(canvas)) canvas=null;
+    }catch(e){ canvas=null; }
+  }
+  if(!canvas && typeof html2canvas==="function"){
+    try{ canvas=await html2canvas(el,{scale:2,backgroundColor:"#ffffff",useCORS:true,logging:false,windowWidth:1200}); }
+    catch(e){ canvas=null; }
+  }
   el.classList.remove("exporting"); if(wasEdit){ editing=true; render(); }
-  if(!canvas) return;
+  if(!canvas){ toast("No se pudo generar la imagen"); return; }
   const name=`calendario-${cat(curCat).name}-${curMonth}.png`.replace(/\s+/g,"-");
   const blob=await new Promise(r=>canvas.toBlob(r,"image/png"));
   if(downloadsNS && blob){
@@ -912,14 +929,14 @@ function buildDoc(){
   const shell=document.getElementById("app-shell").innerHTML;
   const script=document.getElementById("app-script").textContent;
   const json=JSON.stringify(S).replace(/</g,"\\u003c");
-  const fonts=document.querySelector('link[href*="fonts.googleapis.com/css2"]');
+  const fontsCss=(document.getElementById("app-fonts")||{}).textContent||"";
   return '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+reset+'</style></head><body>'
     + '<title>Calendario de Juegos</title>\n'
-    + '<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-    + '<link rel="stylesheet" href="'+(fonts?fonts.getAttribute("href"):"")+'">\n'
+    + '<style id="app-fonts">'+fontsCss+'<\/style>\n'
     + '<style id="app-style">'+style+'</style>\n'
     + '<template id="app-shell">'+shell+'</template>\n<div id="root"></div>\n'
     + '<script type="application/json" id="app-state">'+json+'<\/script>\n'
+    + '<script src="https://cdn.jsdelivr.net/npm/modern-screenshot@4.6.8/dist/index.js"><\/script>\n'
     + '<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"><\/script>\n'
     + '<script id="app-script">'+script+'<\/script>\n</body></html>';
 }
