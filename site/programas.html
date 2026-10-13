@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Programas y Coaches | JBR Academy</title>
-<meta name="description" content="Programas de beisbol por edad y coaches ex-MLB de JBR Academy en Orlando, FL.">
-<link rel="stylesheet" href="css/styles.css?v=9">
+<meta name="description" content="Programas de béisbol por edad y coaches con experiencia en MLB de JBR Academy en Orlando, FL.">
+<link rel="stylesheet" href="css/styles.css?v=11">
 <link rel="stylesheet" href="css/i18n.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@700;800;900&display=swap">
+<link rel="stylesheet" href="css/homeschool.css?v=5">
 </head>
 <body>
 
@@ -19,7 +23,7 @@
       <a href="index.html" data-i18n="nav.home">Inicio</a>
       <a href="tryout.html" data-i18n="nav.tryout">Free Tryout</a>
       <a href="campamentos.html" data-i18n="nav.camps">Campamentos</a>
-      <a href="programas.html" class="active" data-i18n="nav.programs">Programas &amp; Coaches</a>
+      <a href="programas.html" class="active" data-i18n="nav.programs">Programas y Coaches</a>
       <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
       <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
       <a href="juegos.html" data-i18n="nav.games">Juegos</a>
@@ -36,7 +40,7 @@
     <a href="index.html" data-i18n="nav.home">Inicio</a>
     <a href="tryout.html" data-i18n="nav.tryout">Free Tryout</a>
     <a href="campamentos.html" data-i18n="nav.camps">Campamentos</a>
-    <a href="programas.html" data-i18n="nav.programs">Programas &amp; Coaches</a>
+    <a href="programas.html" data-i18n="nav.programs">Programas y Coaches</a>
     <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
     <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
     <a href="juegos.html" data-i18n="nav.games">Juegos</a>
@@ -50,29 +54,30 @@
 
 <section class="hero" style="padding: 48px 0 56px;">
   <div class="container">
-    <span class="eyebrow" data-i18n="programs.hero.eyebrow">Programas &amp; Coaches</span>
+    <span class="eyebrow" data-i18n="programs.hero.eyebrow">Programas y Coaches</span>
     <h1 data-i18n="programs.hero.title">Un programa para cada etapa</h1>
-    <p class="lead" data-i18n="programs.hero.lead">Grupos organizados por edad, con horarios fijos semanales y
-      entrenamiento dirigido por coaches con trayectoria profesional real.</p>
+    <p class="lead" data-i18n="programs.hero.lead">Dos programas con coaches de trayectoria profesional real: JBR Academy Teams, en grupos por edad por la tarde, y JBR Elite Homeschool, entrenamiento élite en horario de día.</p>
+    <div class="hero-actions">
+      <a href="#academy-teams" class="btn btn-white" data-i18n="prog.teams.title">JBR Academy Teams</a>
+      <a href="#homeschool" class="btn btn-outline" data-i18n="prog.hs.title">JBR Elite Homeschool</a>
+    </div>
   </div>
 </section>
 
-<section>
+<section id="academy-teams">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="programs.schedule.eyebrow">Horarios</span>
-      <h2 data-i18n="programs.schedule.title">Horario semanal por grupo de edad</h2>
-      <p data-i18n="programs.schedule.lead">Cupos limitados por grupo — capacidad total de la academia: 100 jugadores.</p>
+      <span class="eyebrow" data-i18n="programs.schedule.eyebrow">Programa 1</span>
+      <h2 data-i18n="programs.schedule.title">JBR Academy Teams</h2>
+      <p data-i18n="programs.schedule.lead">Cupos limitados por grupo. Capacidad total de la academia: 100 jugadores.</p>
     </div>
     <div class="grid-2">
       <div class="card program-card">
         <span class="tag" data-i18n="programs.group1.tag">4 a 9 años</span>
         <h3 data-i18n="programs.group1.title">Fundamentos y desarrollo temprano</h3>
-        <p style="color:var(--gray); font-size:0.92rem;" data-i18n="programs.group1.text">Introducción a los
-          fundamentos del beisbol: bateo, lanzamiento, fildeo y coordinación,
-          en un ambiente adecuado para los más pequeños.</p>
-        <div class="schedule-row"><span>Martes</span><span>6:00 PM</span></div>
-        <div class="schedule-row"><span>Viernes</span><span>6:00 PM</span></div>
+        <p style="color:var(--gray); font-size:0.92rem;" data-i18n="programs.group1.text">Introducción a los fundamentos del béisbol: bateo, lanzamiento, fildeo y coordinación, en un ambiente adecuado para los más pequeños.</p>
+        <div class="schedule-row"><span data-i18n="day.tue">Martes</span><span>6:00 PM</span></div>
+        <div class="schedule-row"><span data-i18n="day.fri">Viernes</span><span>6:00 PM</span></div>
       </div>
       <div class="card program-card">
         <span class="tag" data-i18n="programs.group2.tag">10 a 16 años</span>
@@ -80,8 +85,8 @@
         <p style="color:var(--gray); font-size:0.92rem;" data-i18n="programs.group2.text">Trabajo técnico más
           avanzado en bateo, defensa y estrategia de juego, con enfoque en
           preparación para equipos escolares y competitivos.</p>
-        <div class="schedule-row"><span>Martes</span><span>7:30 PM</span></div>
-        <div class="schedule-row"><span>Viernes</span><span>6:00 PM</span></div>
+        <div class="schedule-row"><span data-i18n="day.tue">Martes</span><span>7:30 PM</span></div>
+        <div class="schedule-row"><span data-i18n="day.fri">Viernes</span><span>6:00 PM</span></div>
       </div>
     </div>
     <div style="text-align:center; margin-top:32px;">
@@ -90,49 +95,94 @@
   </div>
 </section>
 
+<section style="padding-top:0;" id="homeschool">
+  <div class="container">
+    <div class="hs-feature">
+      <div>
+        <span class="eyebrow" data-i18n="hs.feature.eyebrow">Programa 2 · Registro abierto</span>
+        <h2 data-i18n="hs.feature.title">JBR Elite Homeschool Program</h2>
+        <p data-i18n="hs.feature.lead">Entrenamiento élite de béisbol en horario de día para jugadores de 12 años en adelante que estudian en casa.</p>
+        <a href="homeschool.html" class="btn btn-white" data-i18n="hs.feature.cta">Ver programa y registrarse</a>
+      </div>
+      <ul>
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="hs.feature.l1">8:30 AM – 12:30 PM</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9v6M20.5 9v6M6.5 12h11"/></svg><span data-i18n="hs.feature.l2">Preparación física + programa de lanzamiento</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21c-2.5-1.5-4-4.5-4-8V8.5a1.5 1.5 0 0 1 3 0V12"/><path d="M6 12V5.5a1.5 1.5 0 0 1 3 0V11M9 10V4a1.5 1.5 0 0 1 3 0v6M12 10V5a1.5 1.5 0 0 1 3 0v6"/><path d="M15 11V8.5a1.5 1.5 0 0 1 3 0V14c0 4-2.5 7-6 7H7"/><path d="M19.5 9.5l1.5-1"/></svg><span data-i18n="hs.feature.l3">1 hora de defensa · 1 hora de bateo</span></li>
+        <li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></svg><span data-i18n="hs.feature.l4">Aceptamos Step Up For Students</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="bg-off">
   <div class="container">
     <div class="section-head">
-      <span class="eyebrow" data-i18n="programs.team.eyebrow">Nuestro Equipo</span>
+      <span class="eyebrow" data-i18n="programs.team.eyebrow">Nuestro equipo</span>
       <h2 data-i18n="programs.team.title">Coaches con trayectoria profesional real</h2>
-      <p data-i18n="programs.team.lead">No es marketing — es experiencia real jugando y entrenando al más alto
-        nivel del beisbol profesional.</p>
+      <p data-i18n="programs.team.lead">No es marketing: es experiencia real jugando y entrenando al más alto nivel del béisbol profesional.</p>
     </div>
     <div class="grid-3">
+      <div class="card coach-card">
+        <div class="coach-avatar"><img src="assets/historias-exito/coach-jean-berzares.jpg" alt="Jean Berzares"></div>
+        <div>
+          <h3>Jean Berzares</h3>
+          <div class="coach-role" data-i18n="coach.jeanBerzares.role">Fundador y director</div>
+          <ul>
+            <li data-i18n="coach.jeanBerzares.b1">Fundador de JBR Academy</li>
+            <li data-i18n="coach.jeanBerzares.b2">Más de 6 años formando jugadores en Orlando y Kissimmee</li>
+          </ul>
+        </div>
+      </div>
       <div class="card coach-card">
         <div class="coach-avatar"><img src="assets/historias-exito/coach-tomas-perez.jpg" alt="Tomas Perez"></div>
         <div>
           <h3 data-i18n="coach.tomasPerez.name">Tomas Perez</h3>
-          <div class="coach-role" data-i18n="coach.tomasPerez.role">Coach Principal</div>
+          <div class="coach-role" data-i18n="coach.tomasPerez.role">Coach principal</div>
           <ul>
-            <li data-i18n="coach.tomasPerez.b1">Ex-jugador de MLB — 12 años de carrera profesional</li>
+            <li data-i18n="coach.tomasPerez.b1">Exjugador de MLB, con 12 años de carrera profesional</li>
             <li data-i18n="coach.tomasPerez.b2">Jugador del World Baseball Classic 2006</li>
-            <li data-i18n="coach.tomasPerez.b3full">1,012 hits en la LVBP (Liga Venezolana de Béisbol Profesional)</li>
+            <li data-i18n="coach.tomasPerez.b3full">1012 hits en la LVBP (Liga Venezolana de Béisbol Profesional)</li>
             <li data-i18n="coach.tomasPerez.b4">Coach del World Baseball Classic 2023</li>
             <li data-i18n="coach.tomasPerez.b5">Coach de MLB</li>
           </ul>
         </div>
       </div>
       <div class="card coach-card">
-        <div class="coach-avatar"><img src="assets/historias-exito/coach-erick-castillo.jpg" alt="Erick Castillo"></div>
+        <div class="coach-avatar"><img src="assets/historias-exito/coach-erick-castillo-cubs.jpg" alt="Erick Castillo"></div>
         <div>
           <h3 data-i18n="coach.erickCastillo.name">Erick Castillo</h3>
           <div class="coach-role" data-i18n="coach.erickCastillo.role">Coach</div>
           <ul>
-            <li data-i18n="coach.erickCastillo.b1">Ex-jugador de MLB</li>
-            <li data-i18n="coach.erickCastillo.b2">Ex-jugador de la LVBP</li>
-            <li data-i18n="coach.erickCastillo.b3">Jugador activo de Leones del Caracas</li>
+            <li data-i18n="coach.erickCastillo.b1">Exjugador de MLB</li>
+            <li data-i18n="coach.erickCastillo.b2">Exjugador de la LVBP</li>
+            <li data-i18n="coach.erickCastillo.b3">Jugador activo de los Leones del Caracas</li>
             <li data-i18n="coach.erickCastillo.b4">3 campeonatos de la LVBP</li>
+            <li data-i18n="coach.erickCastillo.b5">Coach en la organización de los Chicago Cubs</li>
           </ul>
         </div>
       </div>
       <div class="card coach-card">
-        <div class="coach-avatar"><img src="assets/historias-exito/coach-gilbert-rondon.jpg" alt="Gilbert Rondon"></div>
+        <div class="coach-avatar"><img src="assets/historias-exito/coach-osmin-melendez.jpg" alt="Osmin Melendez"></div>
         <div>
-          <h3 data-i18n="coach.gilbertRondon.name">Gilbert Rondon</h3>
+          <h3>Osmin Melendez</h3>
+          <div class="coach-role" data-i18n="coach.osminMelendez.role">Coach</div>
+          <ul>
+            <li data-i18n="coach.osminMelendez.b1">Coach en ligas menores de los Cincinnati Reds</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card coach-card">
+        <div class="coach-avatar"><img src="assets/historias-exito/coach-gilbert-rondon.jpg" alt="Gilberto Rondón"></div>
+        <div>
+          <h3 data-i18n="coach.gilbertRondon.name">Gilberto Rondón</h3>
           <div class="coach-role" data-i18n="coach.gilbertRondon.role">Coach</div>
           <ul>
-            <li data-i18n="coach.gilbertRondon.b1">Parte del staff de coaches de JBR Academy</li>
+            <li data-i18n="coach.gilbertRondon.b1">Exlanzador de MLB: Houston Astros (1976) y Chicago White Sox (1979)</li>
+            <li data-i18n="coach.gilbertRondon.b2">Seleccionado por los Orioles de Baltimore en la 3.ª ronda del draft de 1973</li>
+            <li data-i18n="coach.gilbertRondon.b3">Jugó en las organizaciones de Orioles, Angels, Astros, Yankees y Dodgers, y en la Liga Mexicana</li>
+            <li data-i18n="coach.gilbertRondon.b4">Coach de Puerto Rico en el Clásico Mundial de Béisbol 2009</li>
+            <li data-i18n="coach.gilbertRondon.b5">Coach de pitcheo de los Bravos de León (Liga Mexicana, 2018)</li>
+            <li data-i18n="coach.gilbertRondon.b6">Mánager de los Empire State Greys (Frontier League, 2022)</li>
           </ul>
         </div>
       </div>
@@ -157,15 +207,15 @@
     <div class="footer-grid">
       <div>
         <h5 data-i18n="footer.brandTitle">JBR Academy</h5>
-        <p data-i18n="footer.tagline">Academia de beisbol en Orlando / Kissimmee, FL. Formando jugadores con
-          entrenamiento de nivel profesional desde hace más de 6 años.</p>
+        <p data-i18n="footer.tagline">Academia de béisbol en Orlando / Kissimmee, FL. Formando jugadores con entrenamiento de nivel profesional desde hace más de 6 años.</p>
       </div>
       <div>
         <h5 data-i18n="footer.navTitle">Navegación</h5>
         <a href="index.html" data-i18n="nav.home">Inicio</a>
         <a href="tryout.html" data-i18n="nav.tryout">Free Tryout</a>
         <a href="campamentos.html" data-i18n="nav.camps">Campamentos</a>
-        <a href="programas.html" data-i18n="nav.programs">Programas &amp; Coaches</a>
+        <a href="programas.html" data-i18n="nav.programs">Programas y Coaches</a>
+        <a href="homeschool.html" data-i18n="nav.homeschool">Elite Homeschool</a>
         <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
         <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
         <a href="juegos.html" data-i18n="nav.games">Juegos</a>
@@ -183,7 +233,7 @@
   </div>
 </footer>
 
-<script src="js/i18n-data.js?v=13"></script>
+<script src="js/i18n-data.js?v=22"></script>
 <script src="js/i18n.js"></script>
 </body>
 </html>

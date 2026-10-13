@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin — Leads | JBR Academy</title>
 <meta name="robots" content="noindex, nofollow">
-<link rel="stylesheet" href="css/styles.css?v=9">
+<link rel="stylesheet" href="css/styles.css?v=11">
 <style>
   body { background: var(--off-white); }
   .admin-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
@@ -94,6 +94,16 @@
       <tbody></tbody>
     </table>
     <div class="empty" id="campsEmpty" style="display:none;">Todavía no hay inscripciones a campamentos.</div>
+  </div>
+
+  <h2 style="color:var(--navy); margin-top:48px;">Registros Elite Homeschool</h2>
+  <div class="toolbar">
+    <span class="count-badge" id="hsCount">0</span>
+    <button class="btn btn-navy" id="exportHs" style="padding:8px 18px; font-size:0.85rem;">Descargar CSV</button>
+  </div>
+  <div class="table-scroll">
+    <table id="hsTable"><thead><tr id="hsHead"></tr></thead><tbody></tbody></table>
+    <div class="empty" id="hsEmpty" style="display:none;">Todavía no hay registros de Elite Homeschool.</div>
   </div>
 </div>
 
@@ -268,9 +278,53 @@ function loadCamps() {
   });
 }
 
+function loadHomeschool() {
+  var cols = [
+    { label: "Recibido", get: function (r) { return fmtDate(r.receivedAt); } },
+    { label: "Jugador", get: function (r) { return r.playerName; } },
+    { label: "Edad", get: function (r) { return r.age; } },
+    { label: "Nacimiento", get: function (r) { return r.birthDate; } },
+    { label: "Grado", get: function (r) { return r.grade; } },
+    { label: "Posicion", get: function (r) { return r.position; } },
+    { label: "Batea/Lanza", get: function (r) { return (r.bats || "") + " / " + (r.throws || ""); } },
+    { label: "Nivel", get: function (r) { return r.level; } },
+    { label: "Equipo", get: function (r) { return r.currentTeam; } },
+    { label: "Camiseta", get: function (r) { return r.shirtSize; } },
+    { label: "Padre/Madre", get: function (r) { return r.parentName; } },
+    { label: "Telefono", get: function (r) { return r.phone; } },
+    { label: "Correo", get: function (r) { return r.email; } },
+    { label: "Ciudad", get: function (r) { return r.city; } },
+    { label: "Step Up", get: function (r) { return r.stepUp; } },
+    { label: "Emergencia", get: function (r) { return (r.emergencyName || "") + " " + (r.emergencyPhone || ""); } },
+    { label: "Medico", get: function (r) { return r.medical; } },
+    { label: "Nos conocio por", get: function (r) { return r.howFound; } },
+    { label: "Waiver", get: function (r) { return r.waiverAccepted ? "Si" : "No"; } },
+    { label: "Fotos", get: function (r) { return r.photoConsent ? "Si" : "No"; } }
+  ];
+  document.getElementById("hsHead").innerHTML = cols.map(function (c) { return "<th>" + esc(c.label) + "</th>"; }).join("");
+  fetch("/api/homeschool-registrations").then(function (r) { return r.json(); }).then(function (regs) {
+    document.getElementById("hsCount").textContent = regs.length;
+    var tbody = document.querySelector("#hsTable tbody");
+    tbody.innerHTML = "";
+    if (regs.length === 0) document.getElementById("hsEmpty").style.display = "block";
+    regs.slice().reverse().forEach(function (r) {
+      var tr = document.createElement("tr");
+      tr.innerHTML = cols.map(function (c) { return "<td>" + esc(c.get(r)) + "</td>"; }).join("");
+      tbody.appendChild(tr);
+    });
+    document.getElementById("exportHs").onclick = function () {
+      downloadCsv("jbr-registros-homeschool.csv", toCsv(regs, cols));
+    };
+  }).catch(function () {
+    document.getElementById("hsEmpty").style.display = "block";
+    document.getElementById("hsEmpty").textContent = "No se pudo conectar con el servidor local (¿está corriendo server.py?).";
+  });
+}
+
 loadLeads();
 loadOrders();
 loadCamps();
+loadHomeschool();
 </script>
 </body>
 </html>

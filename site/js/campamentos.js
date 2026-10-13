@@ -1,6 +1,7 @@
 (function () {
   var ACADEMY_WHATSAPP = "14076864956";
   var CAMPS = window.JBR_CAMPS || [];
+  var ICON = {"calendar": "<svg class=\"ico\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M3 10h18M8 3v4M16 3v4\"/></svg>", "clock": "<svg class=\"ico\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg>", "users": "<svg class=\"ico\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"9\" cy=\"8\" r=\"3.5\"/><path d=\"M2.5 20c.8-3.5 3.4-5.5 6.5-5.5s5.7 2 6.5 5.5\"/><path d=\"M16 4.8a3.5 3.5 0 0 1 0 6.4M18.5 14.8c1.6.8 2.7 2.6 3 5.2\"/></svg>", "pin": "<svg class=\"ico\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z\"/><circle cx=\"12\" cy=\"10\" r=\"2.5\"/></svg>", "hourglass": "<svg class=\"ico\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 3h12M6 21h12M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9\"/></svg>", "card": "<svg class=\"ico\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"6\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M3 10h18M7 15h4\"/></svg>"};
   var PAY = window.JBR_PAYMENT || { zelle: "407-520-8206", name: "JBR Academy LLC" };
 
   var TEXT = {
@@ -13,10 +14,10 @@
       startsIn: "Empieza en", day: "día", days: "días", today: "¡Empieza hoy!", running: "¡En curso!",
       noCamps: "Pronto anunciaremos nuevos campamentos. Escríbenos por WhatsApp para recibir el aviso.",
       noOpen: "No hay campamentos con inscripciones abiertas en este momento.",
-      ageHint: "Tendrá {n} años durante el campamento.", ageWarn: "Ojo: el campamento es para edades {r} años.",
+      ageHint: "Tendrá {n} años durante el campamento.", ageWarn: "Ojo: la edad para este campamento es {r} años.",
       rCamp: "Campamento", rPlayer: "Jugador/a", rAge: "Edad", rShirt: "Camiseta", rLevel: "Nivel",
-      rParent: "Padre/Madre", rPhone: "Teléfono", rEmail: "Correo", rEmerg: "Emergencia", rMedical: "Médico",
-      notifyMsg: "Hola! Quiero que me avisen cuando abran las inscripciones del {c} de JBR Academy.",
+      rParent: "Padre/Madre", rPhone: "Teléfono", rEmail: "Correo", rEmerg: "Emergencia", rMedical: "Información médica",
+      notifyMsg: "¡Hola! Quiero que me avisen cuando abran las inscripciones del {c} de JBR Academy.",
       copied: "¡Copiado!", payLine: "Asegura tu cupo enviando el pago por Zelle"
     },
     en: {
@@ -24,15 +25,15 @@
       dates: "Dates", time: "Time", ages: "Ages", place: "Location", years: "years",
       priceTbd: "Price TBA", perPlayer: "per player",
       spotsLeft: "spots left of", fewSpots: "Last spots!",
-      register: "Register for this camp", notify: "Notify me when it opens", isFull: "Camp is full",
+      register: "Register for This Camp", notify: "Notify Me When It Opens", isFull: "Camp Is Full",
       startsIn: "Starts in", day: "day", days: "days", today: "Starts today!", running: "Happening now!",
       noCamps: "New camps will be announced soon. Message us on WhatsApp to get notified.",
       noOpen: "There are no camps open for registration right now.",
-      ageHint: "Will be {n} years old during camp.", ageWarn: "Note: this camp is for ages {r}.",
+      ageHint: "Will be {n} years old at camp.", ageWarn: "Note: this camp is for ages {r}.",
       rCamp: "Camp", rPlayer: "Player", rAge: "Age", rShirt: "T-shirt", rLevel: "Level",
       rParent: "Parent", rPhone: "Phone", rEmail: "Email", rEmerg: "Emergency", rMedical: "Medical",
       notifyMsg: "Hi! Please let me know when registration opens for the JBR Academy {c}.",
-      copied: "Copied!", payLine: "Secure your spot by paying via Zelle"
+      copied: "Copied!", payLine: "Secure your spot by paying with Zelle"
     }
   };
 
@@ -122,19 +123,19 @@
           '<span class="camp-status ' + st + '">' + esc(tx(st)) + "</span>" +
           '<div class="camp-season">' + esc(t.season) + "</div>" +
           "<h3>" + esc(t.name) + "</h3>" +
-          '<div class="camp-date-badge">📅 ' + esc(formatRange(camp)) + "</div>" +
+          '<div class="camp-date-badge">' + ICON.calendar + ' ' + esc(formatRange(camp)) + "</div>" +
         "</div>" +
         '<div class="camp-card-body">' +
           '<div class="camp-meta">' +
-            "<div>⏰ <span><b>" + esc(tx("time")) + ":</b> " + esc(t.time) + "</span></div>" +
-            "<div>⚾ <span><b>" + esc(tx("ages")) + ":</b> " + esc(camp.ages) + " " + esc(tx("years")) + "</span></div>" +
-            "<div>📍 <span>" + esc(t.location) + "</span></div>" +
-            (st !== "full" ? "<div>⏳ <span><b>" + esc(startsInLabel(camp)) + "</b></span></div>" : "") +
+            "<div>" + ICON.clock + "<span><b>" + esc(tx("time")) + ":</b> " + esc(t.time) + "</span></div>" +
+            "<div>" + ICON.users + "<span><b>" + esc(tx("ages")) + ":</b> " + esc(camp.ages) + " " + esc(tx("years")) + "</span></div>" +
+            "<div>" + ICON.pin + "<span>" + esc(t.location) + "</span></div>" +
+            (st !== "full" ? "<div>" + ICON.hourglass + "<span><b>" + esc(startsInLabel(camp)) + "</b></span></div>" : "") +
           "</div>" +
           '<ul class="camp-highlights">' + (t.highlights || []).map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") + "</ul>" +
           spots +
           '<div class="camp-price"><strong>' + esc(priceText(camp)) + "</strong>" + (camp.price != null ? "<span>" + esc(tx("perPlayer")) + "</span>" : "") + "</div>" +
-          (st === "open" && camp.price != null ? '<div class="camp-pay-line">💳 ' + esc(tx("payLine")) + "</div>" : "") +
+          (st === "open" && camp.price != null ? '<div class="camp-pay-line">' + ICON.card + ' ' + esc(tx("payLine")) + "</div>" : "") +
           btn +
         "</div>" +
       "</article>";
@@ -349,7 +350,7 @@
         console.warn("No se pudo guardar la inscripción en el servidor:", err);
       });
 
-      var message = "Hola! Quiero inscribir a mi hijo/a en el " + reg.campName + " de JBR Academy.\n\n" +
+      var message = "¡Hola! Quiero inscribir a mi hijo/a en el " + reg.campName + " de JBR Academy.\n\n" +
         "Campamento: " + reg.campName + " (" + formatRange(camp) + ")\n" +
         "Jugador/a: " + reg.playerName + "\n" +
         "Fecha de nacimiento: " + reg.birthDate + (age != null ? " (" + age + " años)" : "") + "\n" +
@@ -361,7 +362,7 @@
         "Teléfono: " + reg.phone + "\n" +
         "Correo: " + reg.email + "\n" +
         "Emergencia: " + reg.emergencyName + " — " + reg.emergencyPhone + "\n" +
-        "Médico/alergias: " + reg.medical + "\n" +
+        "Información médica: " + reg.medical + "\n" +
         "Autorizados a recoger: " + reg.pickup + "\n" +
         "Waiver aceptado: " + (reg.waiverAccepted ? "Sí" : "No") + "\n" +
         "Autoriza fotos: " + (reg.photoConsent ? "Sí" : "No") + "\n\n" +

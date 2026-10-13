@@ -37,7 +37,7 @@
       console.warn("No se pudo guardar el pedido en el servidor local (¿está corriendo server.py?):", err);
     });
 
-    var message = "Hola! Quiero ordenar un uniforme de JBR Academy.\n\n" +
+    var message = "¡Hola! Quiero ordenar un uniforme de JBR Academy.\n\n" +
       "Jugador/a: " + data.playerName + "\n" +
       "Número deseado: " + data.jerseyNumber + "\n" +
       "Nombre/Apellido en la camiseta: " + data.jerseyName + "\n" +

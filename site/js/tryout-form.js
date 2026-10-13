@@ -8,10 +8,10 @@
 
   function scheduleForAge(age) {
     if (age >= 4 && age <= 9) {
-      return "Grupo 4-9 años: Martes y Viernes, 6:00 PM";
+      return "Grupo de 4 a 9 años: martes y viernes, 6:00 PM";
     }
     if (age >= 10 && age <= 16) {
-      return "Grupo 10-16 años: Martes 7:30 PM o Viernes 6:00 PM";
+      return "Grupo de 10 a 16 años: martes, 7:30 PM, o viernes, 6:00 PM";
     }
     return null;
   }
@@ -75,7 +75,7 @@
         console.warn("No se pudo guardar el lead en el servidor local (¿está corriendo server.py?):", err);
       });
 
-      var message = "Hola! Quiero registrar a mi hijo/a para el Free Tryout de JBR Academy.\n\n" +
+      var message = "¡Hola! Quiero registrar a mi hijo/a para el Free Tryout de JBR Academy.\n\n" +
         "Padre/Madre: " + parentName + "\n" +
         "Teléfono: " + phone + "\n" +
         "Niño/a: " + childName + "\n" +

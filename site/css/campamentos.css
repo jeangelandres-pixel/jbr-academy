@@ -372,3 +372,14 @@
 .camp-promo-inner p { margin: 2px 0 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; }
 
 .coach-bio { margin: 0; color: var(--gray); font-size: 0.92rem; }
+
+/* Los radios ocultos no deben heredar width:100% de .form-row input (causaba scroll horizontal) */
+.pill-choices label, .camp-choice { position: relative; }
+.pill-choices input, .camp-choice input { width: 1px !important; height: 1px; padding: 0; margin: 0; left: 0; top: 0; }
+
+/* Íconos de línea en las tarjetas de campamento */
+.camp-card .ico, .camp-pay-line .ico { width: 17px; height: 17px; flex: none; }
+.camp-meta div { align-items: center; }
+.camp-meta .ico { color: var(--navy); }
+.camp-date-badge .ico { color: var(--white); }
+.camp-pay-line { display: flex; align-items: center; gap: 6px; }

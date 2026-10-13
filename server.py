@@ -26,11 +26,13 @@ os.makedirs(DATA_DIR, exist_ok=True)
 LEADS_FILE = os.path.join(DATA_DIR, "leads.json")
 ORDERS_FILE = os.path.join(DATA_DIR, "uniform-orders.json")
 CAMPS_FILE = os.path.join(DATA_DIR, "camp-registrations.json")
+HOMESCHOOL_FILE = os.path.join(DATA_DIR, "homeschool-registrations.json")
 
 API_ROUTES = {
     "/api/leads": LEADS_FILE,
     "/api/uniform-orders": ORDERS_FILE,
     "/api/camp-registrations": CAMPS_FILE,
+    "/api/homeschool-registrations": HOMESCHOOL_FILE,
 }
 
 
@@ -121,6 +123,7 @@ if __name__ == "__main__":
     print(f"Leads guardados en: {LEADS_FILE}")
     print(f"Pedidos de uniforme guardados en: {ORDERS_FILE}")
     print(f"Inscripciones a campamentos guardadas en: {CAMPS_FILE}")
+    print(f"Registros Elite Homeschool guardados en: {HOMESCHOOL_FILE}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

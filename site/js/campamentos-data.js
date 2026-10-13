@@ -32,7 +32,7 @@ window.JBR_CAMPS = [
       season: "Thanksgiving 2026",
       time: "Lunes a jueves · 9:00 AM – 12:00 PM",
       location: "South Orange Little League, Orlando",
-      highlights: ["Bateo y mecánica de swing", "Defensa por posición", "Juegos y competencias", "Camiseta oficial del camp"]
+      highlights: ["Bateo y mecánica de swing", "Defensa por posición", "Juegos y competencias", "Camiseta oficial del campamento"]
     },
     en: {
       name: "Thanksgiving Camp",
@@ -56,7 +56,7 @@ window.JBR_CAMPS = [
       season: "Invierno",
       time: "9:00 AM – 1:00 PM",
       location: "South Orange Little League Complex, Orlando",
-      highlights: ["Bateo y mecánica de swing", "Defensa por posición", "Juegos y competencias", "Camiseta oficial del camp"]
+      highlights: ["Bateo y mecánica de swing", "Defensa por posición", "Juegos y competencias", "Camiseta oficial del campamento"]
     },
     en: {
       name: "Winter Camp 2026",
@@ -78,7 +78,7 @@ window.JBR_CAMPS = [
       season: "Primavera",
       time: "9:00 AM – 1:00 PM",
       location: "South Orange Little League Complex, Orlando",
-      highlights: ["Preparación para la temporada", "Pitcheo y catcheo", "Juegos simulados", "Camiseta oficial del camp"]
+      highlights: ["Preparación para la temporada", "Pitcheo y catcheo", "Juegos simulados", "Camiseta oficial del campamento"]
     },
     en: {
       name: "Spring Break Camp 2027",
@@ -100,7 +100,7 @@ window.JBR_CAMPS = [
       season: "Verano",
       time: "Por semanas · horario por confirmar",
       location: "South Orange Little League Complex, Orlando",
-      highlights: ["Inscripción por semana", "Desarrollo técnico completo", "Torneo interno al final", "Camiseta oficial del camp"]
+      highlights: ["Inscripción por semana", "Desarrollo técnico completo", "Torneo interno al final", "Camiseta oficial del campamento"]
     },
     en: {
       name: "Summer Camp 2027",

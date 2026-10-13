@@ -1,0 +1,107 @@
+/* ---------- JBR Elite Homeschool ---------- */
+.hs-hero { padding: 56px 0 64px; }
+.hs-facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 640px; }
+@media (min-width: 720px) { .hs-facts { grid-template-columns: repeat(4, 1fr); } }
+.hs-facts div { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: var(--radius); padding: 14px 12px; text-align: center; }
+.hs-facts strong { display: block; font-size: 1.35rem; font-weight: 900; }
+.hs-facts span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.75); }
+
+.hs-compare { display: grid; grid-template-columns: 1fr; gap: 18px; max-width: 860px; margin: 0 auto 36px; }
+@media (min-width: 720px) { .hs-compare { grid-template-columns: 1fr 1fr; } }
+.hs-col { border: 1px solid var(--gray-light); border-radius: var(--radius); padding: 24px; background: var(--white); }
+.hs-col.elite { background: var(--navy); color: var(--white); border-color: var(--navy); box-shadow: var(--shadow); }
+.hs-col h3 { margin: 0 0 14px; font-size: 1.15rem; color: var(--navy); }
+.hs-col.elite h3 { color: var(--white); }
+.hs-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.hs-col li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.95rem; }
+.hs-x li { color: var(--gray); }
+.hs-x li::before, .hs-ok li::before { flex: none; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 900; margin-top: 1px; }
+.hs-x li::before { content: "✕"; background: var(--gray-light); color: var(--gray); }
+.hs-ok li::before { content: "✓"; background: var(--white); color: var(--navy); }
+
+.hs-benefits { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 640px) { .hs-benefits { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .hs-benefits { grid-template-columns: repeat(5, 1fr); } }
+.hs-benefit { background: var(--white); border: 1px solid var(--gray-light); border-radius: var(--radius); padding: 20px; }
+.hs-benefit span { font-weight: 900; font-size: 1.6rem; color: var(--gray-light); -webkit-text-stroke: 1px var(--navy); }
+.hs-benefit h4 { margin: 6px 0 6px; color: var(--navy); font-size: 1.02rem; }
+.hs-benefit p { margin: 0; color: var(--gray); font-size: 0.88rem; }
+
+.hs-stepup-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.hs-stepup h2 { margin: 14px 0 10px; font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 900; line-height: 1.1; }
+.hs-stepup p { margin: 0; color: rgba(255,255,255,0.82); max-width: 580px; }
+
+.hs-two { align-items: stretch; }
+.hs-h3 { color: var(--navy); font-size: 1.3rem; margin: 14px 0 6px; }
+.hs-muted { color: var(--gray); margin: 0 0 16px; font-size: 0.95rem; }
+.hs-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.hs-pills span { background: var(--navy); color: var(--white); border-radius: 999px; padding: 10px 18px; font-weight: 700; }
+
+.hs-note { background: rgba(10,31,68,0.05); border: 1px solid rgba(10,31,68,0.15); border-radius: 12px; padding: 14px 16px; font-size: 0.9rem; color: var(--navy); margin-bottom: 20px; }
+
+/* Sección destacada en Programas */
+.hs-feature { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; background: linear-gradient(140deg, var(--navy) 0%, var(--navy-light) 100%); color: var(--white); border-radius: 20px; padding: 32px; box-shadow: var(--shadow); }
+@media (min-width: 860px) { .hs-feature { grid-template-columns: 1.3fr 1fr; padding: 40px; } }
+.hs-feature h2 { margin: 14px 0 10px; font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.1; }
+.hs-feature p { margin: 0 0 20px; color: rgba(255,255,255,0.82); }
+.hs-feature ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.hs-feature li { display: flex; gap: 10px; align-items: center; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 12px 14px; font-weight: 600; font-size: 0.95rem; }
+.hs-feature .eyebrow { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.4); color: var(--white); }
+
+/* ---------- Estilo béisbol profesional ---------- */
+.ico { width: 20px; height: 20px; flex: none; display: inline-block; vertical-align: middle; }
+
+.hs-page h1,
+.hs-page .section-head h2,
+.hs-page .hs-stepup h2,
+.hs-page .hs-h3,
+.hs-page .hs-col h3,
+.hs-feature h2 {
+  font-family: "Saira Extra Condensed", "Arial Narrow", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 900;
+}
+.hs-page h1 { font-size: clamp(2.6rem, 8vw, 4.4rem); line-height: 0.95; }
+.hs-page .section-head h2 { font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; }
+.hs-page .hs-stepup h2 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1; }
+.hs-page .hs-h3 { font-size: 1.7rem; line-height: 1; }
+.hs-page .hs-col h3 { font-size: 1.5rem; }
+.hs-feature h2 { font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1; }
+
+/* Hero con líneas de diamante */
+.hs-hero { position: relative; overflow: hidden; }
+.hs-hero::before, .hs-hero::after {
+  content: ""; position: absolute; border: 2px solid rgba(255,255,255,0.07); transform: rotate(45deg); pointer-events: none;
+}
+.hs-hero::before { width: 620px; height: 620px; right: -260px; top: -200px; }
+.hs-hero::after { width: 420px; height: 420px; right: -160px; top: -100px; border-color: rgba(255,255,255,0.05); }
+.hs-hero .container { position: relative; z-index: 1; }
+
+/* Marcador */
+.hs-facts div { display: flex; flex-direction: column; align-items: center; gap: 4px; background: rgba(4,12,28,0.55); border: 1px solid rgba(255,255,255,0.14); border-top: 3px solid var(--white); border-radius: 10px; padding: 14px 10px 12px; }
+.hs-facts .ico { width: 22px; height: 22px; color: rgba(255,255,255,0.7); }
+.hs-facts strong { font-family: "Saira Extra Condensed", sans-serif; font-size: 2.1rem; line-height: 1; letter-spacing: 0.5px; font-variant-numeric: tabular-nums; }
+
+/* Bloques del día */
+.hs-page .day-head { display: flex; align-items: center; gap: 10px; }
+.hs-page .day-ico { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(10,31,68,0.08); color: var(--navy); }
+.hs-page .day-step.active .day-ico { background: rgba(255,255,255,0.14); color: var(--white); }
+.hs-page .day-time { font-family: "Saira Extra Condensed", sans-serif; font-size: 1.8rem; text-transform: uppercase; }
+.hs-page .day-title { font-family: "Saira Extra Condensed", sans-serif; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.3px; line-height: 1.05; }
+
+/* Beneficios */
+.hs-benefit span { font-family: "Saira Extra Condensed", sans-serif; font-size: 2.6rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--navy); }
+.hs-benefit h4 { font-family: "Saira Extra Condensed", sans-serif; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.3px; }
+.hs-benefit { border-top: 3px solid var(--navy); }
+
+/* 2027–2028 */
+.hs-pills span { display: inline-flex; align-items: center; gap: 8px; }
+.hs-pills em { font-style: normal; }
+.hs-pills .ico { width: 18px; height: 18px; }
+
+/* Bloque destacado en Programas */
+.hs-feature li .ico { color: rgba(255,255,255,0.85); }
+@media (min-width: 640px) and (max-width: 1099px) { .hs-benefit:last-child { grid-column: 1 / -1; } }
+.hs-two { max-width: 760px; margin: 0 auto; }
+.feature-icon .ico { width: 22px; height: 22px; }
