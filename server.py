@@ -25,10 +25,12 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 LEADS_FILE = os.path.join(DATA_DIR, "leads.json")
 ORDERS_FILE = os.path.join(DATA_DIR, "uniform-orders.json")
+CAMPS_FILE = os.path.join(DATA_DIR, "camp-registrations.json")
 
 API_ROUTES = {
     "/api/leads": LEADS_FILE,
     "/api/uniform-orders": ORDERS_FILE,
+    "/api/camp-registrations": CAMPS_FILE,
 }
 
 
@@ -118,6 +120,7 @@ if __name__ == "__main__":
     print(f"JBR Academy — sitio + API corriendo en http://localhost:{port}")
     print(f"Leads guardados en: {LEADS_FILE}")
     print(f"Pedidos de uniforme guardados en: {ORDERS_FILE}")
+    print(f"Inscripciones a campamentos guardadas en: {CAMPS_FILE}")
     try:
         server.serve_forever()
     except KeyboardInterrupt:

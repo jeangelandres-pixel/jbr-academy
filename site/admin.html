@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin — Leads | JBR Academy</title>
 <meta name="robots" content="noindex, nofollow">
-<link rel="stylesheet" href="css/styles.css?v=8">
+<link rel="stylesheet" href="css/styles.css?v=9">
 <style>
   body { background: var(--off-white); }
   .admin-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 80px; }
@@ -75,6 +75,25 @@
       <tbody></tbody>
     </table>
     <div class="empty" id="ordersEmpty" style="display:none;">Todavía no hay pedidos de uniformes.</div>
+  </div>
+
+  <h2 style="color:var(--navy); margin-top:48px;">Inscripciones a campamentos</h2>
+  <div class="toolbar">
+    <span class="count-badge" id="campsCount">0</span>
+    <button class="btn btn-navy" id="exportCamps" style="padding:8px 18px; font-size:0.85rem;">Descargar CSV</button>
+  </div>
+  <div class="table-scroll">
+    <table id="campsTable">
+      <thead>
+        <tr>
+          <th>Recibido</th><th>Campamento</th><th>Jugador/a</th><th>Edad</th><th>Nacimiento</th>
+          <th>Camiseta</th><th>Nivel</th><th>JBR</th><th>Padre/Madre</th><th>Teléfono</th><th>Correo</th>
+          <th>Emergencia</th><th>Médico</th><th>Recoger</th><th>Waiver</th><th>Fotos</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="empty" id="campsEmpty" style="display:none;">Todavía no hay inscripciones a campamentos.</div>
   </div>
 </div>
 
@@ -203,8 +222,55 @@ function loadOrders() {
   });
 }
 
+function esc(v) {
+  return String(v == null ? "" : v).replace(/[&<>"]/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+  });
+}
+
+function loadCamps() {
+  var cols = [
+    { label: "Recibido", get: function (r) { return fmtDate(r.receivedAt); } },
+    { label: "Campamento", get: function (r) { return r.campName; } },
+    { label: "Jugador", get: function (r) { return r.playerName; } },
+    { label: "Edad", get: function (r) { return r.ageAtCamp; } },
+    { label: "Nacimiento", get: function (r) { return r.birthDate; } },
+    { label: "Camiseta", get: function (r) { return r.shirtSize; } },
+    { label: "Nivel", get: function (r) { return r.level; } },
+    { label: "JBR", get: function (r) { return r.jbrStudent; } },
+    { label: "Padre/Madre", get: function (r) { return r.parentName; } },
+    { label: "Telefono", get: function (r) { return r.phone; } },
+    { label: "Correo", get: function (r) { return r.email; } },
+    { label: "Emergencia", get: function (r) { return (r.emergencyName || "") + " " + (r.emergencyPhone || ""); } },
+    { label: "Medico", get: function (r) { return r.medical; } },
+    { label: "Recoger", get: function (r) { return r.pickup; } },
+    { label: "Waiver", get: function (r) { return r.waiverAccepted ? "Si" : "No"; } },
+    { label: "Fotos", get: function (r) { return r.photoConsent ? "Si" : "No"; } }
+  ];
+  fetch("/api/camp-registrations").then(function (r) { return r.json(); }).then(function (regs) {
+    document.getElementById("campsCount").textContent = regs.length;
+    var tbody = document.querySelector("#campsTable tbody");
+    tbody.innerHTML = "";
+    if (regs.length === 0) {
+      document.getElementById("campsEmpty").style.display = "block";
+    }
+    regs.slice().reverse().forEach(function (r) {
+      var tr = document.createElement("tr");
+      tr.innerHTML = cols.map(function (c) { return "<td>" + esc(c.get(r)) + "</td>"; }).join("");
+      tbody.appendChild(tr);
+    });
+    document.getElementById("exportCamps").onclick = function () {
+      downloadCsv("jbr-inscripciones-campamentos.csv", toCsv(regs, cols));
+    };
+  }).catch(function () {
+    document.getElementById("campsEmpty").style.display = "block";
+    document.getElementById("campsEmpty").textContent = "No se pudo conectar con el servidor local (¿está corriendo server.py?).";
+  });
+}
+
 loadLeads();
 loadOrders();
+loadCamps();
 </script>
 </body>
 </html>

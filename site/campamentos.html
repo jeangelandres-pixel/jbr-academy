@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campamentos de Beisbol | JBR Academy</title>
+<meta name="description" content="Campamentos de beisbol de JBR Academy en Orlando, FL. Thanksgiving, invierno, Spring Break y verano para niños desde los 7 años. Inscríbete en línea.">
+<link rel="stylesheet" href="css/styles.css?v=9">
+<link rel="stylesheet" href="css/i18n.css">
+<link rel="stylesheet" href="css/campamentos.css?v=3">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-badge"><img src="assets/logo.png?v=2" alt="JBR Academy" class="brand-mark"></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" data-i18n="nav.home">Inicio</a>
+      <a href="tryout.html" data-i18n="nav.tryout">Free Tryout</a>
+      <a href="campamentos.html" class="active" data-i18n="nav.camps">Campamentos</a>
+      <a href="programas.html" data-i18n="nav.programs">Programas &amp; Coaches</a>
+      <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+      <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
+      <a href="juegos.html" data-i18n="nav.games">Juegos</a>
+      <a href="conocenos.html" data-i18n="nav.about">Conócenos</a>
+    </nav>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <a href="tryout.html" class="btn btn-white header-cta" data-i18n="nav.ctaButton">Tryout Gratis</a>
+    <button class="menu-toggle" aria-label="Abrir menú" onclick="document.getElementById('mobileMenu').classList.toggle('open')">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" data-i18n="nav.home">Inicio</a>
+    <a href="tryout.html" data-i18n="nav.tryout">Free Tryout</a>
+    <a href="campamentos.html" data-i18n="nav.camps">Campamentos</a>
+    <a href="programas.html" data-i18n="nav.programs">Programas &amp; Coaches</a>
+    <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+    <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
+    <a href="juegos.html" data-i18n="nav.games">Juegos</a>
+    <a href="conocenos.html" data-i18n="nav.about">Conócenos</a>
+    <div class="lang-switch">
+      <button class="lang-btn" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero camp-hero">
+  <div class="container">
+    <span class="eyebrow" data-i18n="camps.hero.eyebrow">Campamentos JBR</span>
+    <h1 data-i18n-html="camps.hero.title">Vacaciones con <span>bate y guante</span></h1>
+    <p class="lead" data-i18n="camps.hero.lead">Mañanas completas de beisbol con nuestros coaches profesionales durante los recesos escolares. Diversión, amigos y desarrollo real para jugadores desde los 7 años en adelante.</p>
+
+    <div class="camp-next" id="campNext" hidden>
+      <div class="camp-next-info">
+        <span class="camp-next-label" data-i18n="camps.next.label">Próximo campamento</span>
+        <strong class="camp-next-name" id="campNextName"></strong>
+        <span class="camp-next-dates" id="campNextDates"></span>
+      </div>
+      <div class="countdown" id="campCountdown" aria-live="polite">
+        <div><strong data-cd="d">0</strong><span data-i18n="camps.cd.days">días</span></div>
+        <div><strong data-cd="h">0</strong><span data-i18n="camps.cd.hours">horas</span></div>
+        <div><strong data-cd="m">0</strong><span data-i18n="camps.cd.minutes">min</span></div>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#inscripcion" class="btn btn-white" data-i18n="camps.hero.ctaRegister">Inscribir a mi hijo/a</a>
+      <a href="#calendario" class="btn btn-outline" data-i18n="camps.hero.ctaSee">Ver campamentos</a>
+    </div>
+  </div>
+</section>
+
+<section id="calendario">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="camps.list.eyebrow">Calendario de Campamentos</span>
+      <h2 data-i18n="camps.list.title">Elige tu campamento</h2>
+      <p data-i18n="camps.list.lead">Cupos limitados por campamento. Asegura el lugar de tu jugador/a desde ahora.</p>
+    </div>
+    <div class="camp-grid" id="campGrid"></div>
+  </div>
+</section>
+
+<section class="bg-off">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="camps.day.eyebrow">Un día en el camp</span>
+      <h2 data-i18n="camps.day.title">Así se vive un día JBR</h2>
+      <p data-i18n="camps.day.lead">Cada jornada combina técnica, competencia y mucha diversión. Toca cada momento para ver más.</p>
+    </div>
+    <div class="day-timeline" id="dayTimeline">
+      <button type="button" class="day-step active" data-step="0">
+        <span class="day-time">9:00</span>
+        <span class="day-title" data-i18n="camps.day.s1">Llegada y calentamiento</span>
+        <span class="day-text" data-i18n="camps.day.s1t">Check-in con los coaches, estiramientos, carreras y lanzamiento para preparar el cuerpo.</span>
+      </button>
+      <button type="button" class="day-step" data-step="1">
+        <span class="day-time">9:30</span>
+        <span class="day-title" data-i18n="camps.day.s2">Estaciones de bateo</span>
+        <span class="day-text" data-i18n="camps.day.s2t">Tee, soft toss y práctica en vivo trabajando la mecánica del swing en grupos por edad.</span>
+      </button>
+      <button type="button" class="day-step" data-step="2">
+        <span class="day-time">10:30</span>
+        <span class="day-title" data-i18n="camps.day.s3">Defensa por posición</span>
+        <span class="day-text" data-i18n="camps.day.s3t">Infield, outfield, pitcheo y catcheo con correcciones personalizadas de cada coach.</span>
+      </button>
+      <button type="button" class="day-step" data-step="3">
+        <span class="day-time">11:30</span>
+        <span class="day-title" data-i18n="camps.day.s4">Juegos y premiación</span>
+        <span class="day-text" data-i18n="camps.day.s4t">Competencias, juego simulado y reconocimiento al esfuerzo del día antes de la salida.</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="camps.coaches.eyebrow">Staff del Campamento</span>
+      <h2 data-i18n="camps.coaches.title">Entrena con coaches de nivel profesional</h2>
+      <p data-i18n="camps.coaches.lead">Tu hijo/a aprenderá directamente de coaches con experiencia en organizaciones de MLB.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card coach-card">
+        <div class="coach-avatar"><img src="assets/historias-exito/coach-jean-berzares.jpg" alt="Jean Berzares"></div>
+        <div>
+          <h3>Jean Berzares</h3>
+          <div class="coach-role" data-i18n="camps.coaches.jeanRole">Fundador de JBR Academy</div>
+          <p class="coach-bio" data-i18n="camps.coaches.jeanBio">Fundador y director de la academia, formando jugadores en Orlando desde hace más de 6 años.</p>
+        </div>
+      </div>
+      <div class="card coach-card">
+        <div class="coach-avatar"><img src="assets/historias-exito/coach-erick-castillo-cubs.jpg" alt="Erick Castillo"></div>
+        <div>
+          <h3>Erick Castillo</h3>
+          <div class="coach-role" data-i18n="camps.coaches.erickRole">Coach MLB · Chicago Cubs</div>
+          <p class="coach-bio" data-i18n="camps.coaches.erickBio">Coach en la organización de los Chicago Cubs de Grandes Ligas.</p>
+        </div>
+      </div>
+      <div class="card coach-card">
+        <div class="coach-avatar"><img src="assets/historias-exito/coach-osmin-melendez.jpg" alt="Osmin Melendez"></div>
+        <div>
+          <h3>Osmin Melendez</h3>
+          <div class="coach-role" data-i18n="camps.coaches.osminRole">Coach · Cincinnati Reds</div>
+          <p class="coach-bio" data-i18n="camps.coaches.osminBio">Coach en ligas menores de la organización de los Cincinnati Reds.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-off">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="camps.bring.eyebrow">Prepárate</span>
+      <h2 data-i18n="camps.bring.title">Equipo para el campamento</h2>
+      <p data-i18n="camps.bring.lead">Llega listo para entrenar como profesional.</p>
+    </div>
+    <div class="bring-grid">
+      <div class="bring-item">
+        <span class="bring-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15a9 9 0 0 1 18 0"/><path d="M3 15h18"/><path d="M15 15c2 0 5 .5 6 2"/></svg></span>
+        <div><strong data-i18n="camps.bring.i1">Gorra de béisbol</strong><small data-i18n="camps.bring.d1">Protección del sol en cada sesión.</small></div>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h18v-2c0-1.5-1-2.5-3-3l-5-1.5L11 7H5L3 11z"/><path d="M3 17v2h18v-2"/></svg></span>
+        <div><strong data-i18n="camps.bring.i2">Tenis deportivos</strong><small data-i18n="camps.bring.d2">Calzado cómodo para correr y entrenar.</small></div>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z"/></svg></span>
+        <div><strong data-i18n="camps.bring.i3">Ropa de entrenamiento</strong><small data-i18n="camps.bring.d3">Pantalón de práctica y camiseta cómoda.</small></div>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2h6"/><path d="M10 2v3L8 8v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V8l-2-3V2"/><path d="M8 12h8"/></svg></span>
+        <div><strong data-i18n="camps.bring.i4">Hidratación</strong><small data-i18n="camps.bring.d4">Botella de agua grande, marcada con su nombre.</small></div>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+        <div><strong data-i18n="camps.bring.i5">Protector solar</strong><small data-i18n="camps.bring.d5">Aplicado antes de llegar al campo.</small></div>
+      </div>
+      <div class="bring-item">
+        <span class="bring-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7c-3-2-8-1-8 5 0 5 3 9 5 9 1 0 2-.5 3-.5s2 .5 3 .5c2 0 5-4 5-9 0-6-5-7-8-5z"/><path d="M12 7c0-2 1-4 3-4"/></svg></span>
+        <div><strong data-i18n="camps.bring.i6">Merienda saludable</strong><small data-i18n="camps.bring.d6">Energía para rendir toda la mañana.</small></div>
+      </div>
+    </div>
+    <p class="bring-note" data-i18n="camps.bring.note">Marca todas sus pertenencias con su nombre.</p>
+  </div>
+</section>
+
+<section id="inscripcion">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="camps.form.eyebrow">Inscripción</span>
+      <h2 data-i18n="camps.form.title">Registro al campamento</h2>
+      <p data-i18n="camps.form.lead">Cuatro pasos rápidos. Asegura el cupo enviando el pago por Zelle.</p>
+    </div>
+
+    <div class="form-card camp-form-card">
+      <ol class="stepper" id="stepper">
+        <li class="active"><span>1</span><em data-i18n="camps.step.camp">Campamento</em></li>
+        <li><span>2</span><em data-i18n="camps.step.player">Jugador/a</em></li>
+        <li><span>3</span><em data-i18n="camps.step.family">Familia</em></li>
+        <li><span>4</span><em data-i18n="camps.step.confirm">Confirmar</em></li>
+      </ol>
+
+      <form id="campForm" novalidate>
+        <!-- Paso 1 -->
+        <fieldset class="camp-step active" data-step="0">
+          <legend data-i18n="camps.form.chooseCamp">¿A qué campamento quieres inscribirlo/a?</legend>
+          <div class="camp-choices" id="campChoices"></div>
+          <p class="step-error" id="campChoiceError" data-i18n="camps.form.chooseCampError" hidden>Selecciona un campamento para continuar.</p>
+        </fieldset>
+
+        <!-- Paso 2 -->
+        <fieldset class="camp-step" data-step="1">
+          <legend data-i18n="camps.form.playerTitle">Datos del jugador/a</legend>
+          <div class="form-row">
+            <label for="cPlayerName" data-i18n="camps.form.playerName">Nombre completo del jugador/a</label>
+            <input type="text" id="cPlayerName" required autocomplete="off">
+          </div>
+          <div class="grid-2">
+            <div class="form-row">
+              <label for="cBirth" data-i18n="camps.form.birth">Fecha de nacimiento</label>
+              <input type="date" id="cBirth" required>
+              <div class="schedule-hint" id="cAgeHint"></div>
+            </div>
+            <div class="form-row">
+              <label for="cShirt" data-i18n="camps.form.shirt">Talla de camiseta</label>
+              <select id="cShirt" required>
+                <option value="" data-i18n="camps.form.select">Selecciona…</option>
+                <option value="Youth S">Youth S</option>
+                <option value="Youth M">Youth M</option>
+                <option value="Youth L">Youth L</option>
+                <option value="Youth XL">Youth XL</option>
+                <option value="Adult S">Adult S</option>
+                <option value="Adult M">Adult M</option>
+                <option value="Adult L">Adult L</option>
+                <option value="Adult XL">Adult XL</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label data-i18n="camps.form.level">Nivel de experiencia</label>
+            <div class="pill-choices" data-name="level">
+              <label><input type="radio" name="cLevel" value="Principiante" required><span data-i18n="camps.form.levelBeg">Principiante</span></label>
+              <label><input type="radio" name="cLevel" value="Intermedio"><span data-i18n="camps.form.levelMid">Intermedio</span></label>
+              <label><input type="radio" name="cLevel" value="Avanzado"><span data-i18n="camps.form.levelAdv">Avanzado</span></label>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="form-row">
+              <label data-i18n="camps.form.jbr">¿Ya entrena en JBR Academy?</label>
+              <div class="pill-choices">
+                <label><input type="radio" name="cJbr" value="Sí" required><span data-i18n="camps.form.yes">Sí</span></label>
+                <label><input type="radio" name="cJbr" value="No"><span data-i18n="camps.form.no">No</span></label>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="cPosition" data-i18n="camps.form.position">Posición favorita (opcional)</label>
+              <input type="text" id="cPosition" placeholder="Ej. Shortstop, Pitcher..." data-i18n-placeholder="camps.form.positionPh">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Paso 3 -->
+        <fieldset class="camp-step" data-step="2">
+          <legend data-i18n="camps.form.familyTitle">Padre/madre y contacto de emergencia</legend>
+          <div class="grid-2">
+            <div class="form-row">
+              <label for="cParent" data-i18n="camps.form.parent">Nombre del padre/madre o tutor</label>
+              <input type="text" id="cParent" required>
+            </div>
+            <div class="form-row">
+              <label for="cPhone" data-i18n="camps.form.phone">Teléfono (WhatsApp)</label>
+              <input type="tel" id="cPhone" placeholder="(407) 000-0000" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="cEmail" data-i18n="camps.form.email">Correo electrónico</label>
+            <input type="email" id="cEmail" placeholder="nombre@correo.com" required>
+          </div>
+          <div class="grid-2">
+            <div class="form-row">
+              <label for="cEmergName" data-i18n="camps.form.emergName">Contacto de emergencia (otra persona)</label>
+              <input type="text" id="cEmergName" required>
+            </div>
+            <div class="form-row">
+              <label for="cEmergPhone" data-i18n="camps.form.emergPhone">Teléfono de emergencia</label>
+              <input type="tel" id="cEmergPhone" placeholder="(407) 000-0000" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="cMedical" data-i18n="camps.form.medical">Alergias, condiciones médicas o medicamentos</label>
+            <textarea id="cMedical" rows="2" placeholder="Escribe “Ninguna” si no aplica" data-i18n-placeholder="camps.form.medicalPh" required></textarea>
+          </div>
+          <div class="form-row">
+            <label for="cPickup" data-i18n="camps.form.pickup">Personas autorizadas para recogerlo/a (opcional)</label>
+            <input type="text" id="cPickup" placeholder="Nombre y parentesco" data-i18n-placeholder="camps.form.pickupPh">
+          </div>
+        </fieldset>
+
+        <!-- Paso 4 -->
+        <fieldset class="camp-step" data-step="3">
+          <legend data-i18n="camps.form.reviewTitle">Revisa y confirma</legend>
+          <dl class="review" id="campReview"></dl>
+
+          <div class="pay-box" data-pay-box>
+            <div class="pay-head">
+              <span class="pay-badge">Zelle</span>
+              <div>
+                <strong data-i18n="camps.pay.title">Asegura tu cupo con el pago</strong>
+                <p data-i18n="camps.pay.text">El cupo queda asegurado y la inscripción completa al enviar el pago.</p>
+              </div>
+            </div>
+            <dl class="pay-details">
+              <dt data-i18n="camps.pay.amount">Monto</dt><dd data-pay-amount></dd>
+              <dt data-i18n="camps.pay.to">Zelle a</dt><dd><span data-pay-zelle></span> <button type="button" class="pay-copy" data-pay-copy data-i18n="camps.pay.copy">Copiar</button></dd>
+              <dt data-i18n="camps.pay.name">A nombre de</dt><dd data-pay-name></dd>
+              <dt data-i18n="camps.pay.memo">Nota del Zelle</dt><dd data-i18n="camps.pay.memoText">Nombre del jugador/a + campamento</dd>
+            </dl>
+          </div>
+
+          <div class="form-row">
+            <label data-i18n="camps.form.waiverTitle">Exención de responsabilidad (waiver)</label>
+            <div class="waiver-box" data-i18n-html="camps.form.waiverBody">
+              <strong>JBR Academy — Exención de responsabilidad para campamentos</strong><br><br>
+              Yo, como padre/madre o tutor legal, autorizo a mi hijo/a a participar en el campamento de JBR Academy. Reconozco que el beisbol es una actividad física que conlleva riesgo de lesión, y libero a JBR Academy, sus coaches y representantes de responsabilidad por lesiones que puedan ocurrir durante la actividad, salvo negligencia comprobada.<br><br>
+              Autorizo a JBR Academy a buscar atención médica de emergencia para mi hijo/a si fuera necesario, y confirmo que la información médica que proporcioné es correcta.<br><br>
+              Declaro haber leído y comprendido este documento y participo de forma voluntaria.
+            </div>
+          </div>
+          <label class="check-row">
+            <input type="checkbox" id="cWaiver" required>
+            <span data-i18n="camps.form.waiverCheck">He leído y acepto la exención de responsabilidad.</span>
+          </label>
+          <label class="check-row">
+            <input type="checkbox" id="cPhotos" checked>
+            <span data-i18n="camps.form.photosCheck">Autorizo el uso de fotos y videos del campamento en redes sociales de JBR Academy.</span>
+          </label>
+        </fieldset>
+
+        <div class="step-nav">
+          <button type="button" class="btn btn-ghost" id="campPrev" data-i18n="camps.form.back" hidden>← Atrás</button>
+          <button type="button" class="btn btn-navy" id="campNextBtn" data-i18n="camps.form.next">Continuar →</button>
+          <button type="submit" class="btn btn-navy" id="campSubmit" data-i18n="camps.form.submit" hidden>Confirmar inscripción</button>
+        </div>
+        <div class="dev-note" data-i18n="camps.form.note">Al confirmar, se abrirá WhatsApp con la inscripción ya escrita para enviarla al 407-686-4956. Tu cupo queda asegurado al enviar el pago por Zelle.</div>
+      </form>
+
+      <div class="form-success" id="campSuccess">
+        <div class="check">✓</div>
+        <h3 style="color:var(--navy); margin:0 0 8px;" data-i18n="camps.success.title">¡Inscripción enviada!</h3>
+        <p style="color:var(--gray); margin:0 0 18px;" data-i18n="camps.success.text">Último paso: envía el pago por Zelle para asegurar el cupo y completar la inscripción.</p>
+        <div class="pay-box" data-pay-box>
+          <div class="pay-head">
+            <span class="pay-badge">Zelle</span>
+            <div>
+              <strong data-i18n="camps.pay.title">Asegura tu cupo con el pago</strong>
+              <p data-i18n="camps.pay.text">El cupo queda asegurado y la inscripción completa al enviar el pago.</p>
+            </div>
+          </div>
+          <dl class="pay-details">
+            <dt data-i18n="camps.pay.amount">Monto</dt><dd data-pay-amount></dd>
+            <dt data-i18n="camps.pay.to">Zelle a</dt><dd><span data-pay-zelle></span> <button type="button" class="pay-copy" data-pay-copy data-i18n="camps.pay.copy">Copiar</button></dd>
+            <dt data-i18n="camps.pay.name">A nombre de</dt><dd data-pay-name></dd>
+            <dt data-i18n="camps.pay.memo">Nota del Zelle</dt><dd data-i18n="camps.pay.memoText">Nombre del jugador/a + campamento</dd>
+          </dl>
+        </div>
+        <button type="button" class="btn btn-navy" id="campAnother" data-i18n="camps.success.another">Inscribir otro hermano/a</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-off">
+  <div class="container" style="max-width:820px;">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="camps.faq.eyebrow">Preguntas</span>
+      <h2 data-i18n="camps.faq.title">Preguntas frecuentes</h2>
+    </div>
+    <div class="card camp-faq">
+      <details>
+        <summary data-i18n="camps.faq.q1">¿Necesita experiencia previa?</summary>
+        <p data-i18n="camps.faq.a1">No. Dividimos a los jugadores por edad y nivel para que todos aprendan y se diviertan.</p>
+      </details>
+      <details>
+        <summary data-i18n="camps.faq.q2">¿Cómo se paga?</summary>
+        <p data-i18n="camps.faq.a2">Por Zelle al 407-520-8206 (JBR Academy LLC). El cupo queda asegurado y la inscripción completa cuando recibimos el pago. Escribe el nombre del jugador/a en la nota del Zelle.</p>
+      </details>
+      <details>
+        <summary data-i18n="camps.faq.q3">¿Pueden asistir jugadores que no son de JBR?</summary>
+        <p data-i18n="camps.faq.a3">¡Sí! Los campamentos están abiertos a todos los jugadores desde los 7 años en adelante.</p>
+      </details>
+      <details>
+        <summary data-i18n="camps.faq.q4">¿Qué pasa si llueve?</summary>
+        <p data-i18n="camps.faq.a4">Si el clima no permite entrenar, te avisamos por WhatsApp y reprogramamos la sesión.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h5 data-i18n="footer.brandTitle">JBR Academy</h5>
+        <p data-i18n="footer.tagline">Academia de beisbol en Orlando / Kissimmee, FL. Formando jugadores con
+          entrenamiento de nivel profesional desde hace más de 6 años.</p>
+      </div>
+      <div>
+        <h5 data-i18n="footer.navTitle">Navegación</h5>
+        <a href="index.html" data-i18n="nav.home">Inicio</a>
+        <a href="tryout.html" data-i18n="nav.tryout">Free Tryout</a>
+        <a href="campamentos.html" data-i18n="nav.camps">Campamentos</a>
+        <a href="programas.html" data-i18n="nav.programs">Programas &amp; Coaches</a>
+        <a href="contacto.html" data-i18n="nav.contact">Contacto</a>
+        <a href="uniformes.html" data-i18n="nav.uniforms">Uniformes</a>
+        <a href="juegos.html" data-i18n="nav.games">Juegos</a>
+        <a href="conocenos.html" data-i18n="nav.about">Conócenos</a>
+      </div>
+      <div>
+        <h5 data-i18n="footer.contactTitle">Contacto</h5>
+        <a href="tel:+14076864956">407-686-4956</a>
+        <a href="https://wa.me/14076864956" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.instagram.com/jbracademy/" target="_blank" rel="noopener">@jbracademy</a>
+        <p data-i18n="footer.address">South Orange Little League Complex, Orlando, FL</p>
+      </div>
+    </div>
+    <div class="footer-bottom" data-i18n="footer.rights">© JBR Academy. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script src="js/i18n-data.js?v=13"></script>
+<script src="js/i18n.js"></script>
+<script src="js/campamentos-data.js?v=2"></script>
+<script src="js/campamentos.js?v=2"></script>
+</body>
+</html>
