@@ -320,7 +320,7 @@ function gameHTML(g, nth){
     <div class="gright">
       <span class="ha ${home?"home":"away"}">${home?L().home:L().away}</span>
       <div class="time">${esc(tm.h)}<small>${tm.ap}</small></div>
-      ${hasScore(g) ? `<span class="res">${outcomeLabel(g)} ${g.score.us}-${g.score.them}</span>` : (st || (g.time && S.academy.arrive?`<div class="arrive">${L().arrive} ${esc(arrival(g.time))}</div>`:""))}
+      ${hasScore(g) ? `<span class="res ${outcome(g)}">${outcomeLabel(g)} ${g.score.us}-${g.score.them}</span>` : (st || (g.time && S.academy.arrive?`<div class="arrive">${L().arrive} ${esc(arrival(g.time))}</div>`:""))}
     </div>
   </${tag}>`;
 }
