@@ -367,6 +367,8 @@ function playerStats(c){
     Object.entries(g.box||{}).forEach(([pid,b])=>{ const x=m[pid]; if(!x) return; x.g++; ["ab","r","h","d","t","hr","rbi","bb","so","sb"].forEach(k=>x[k]+=N(b[k])); });
     Object.entries(g.pit||{}).forEach(([pid,b])=>{ const x=m[pid]; if(!x) return; x.pg++; x.outs+=ipToOuts(b.ip); x.ph+=N(b.h); x.pr+=N(b.r); x.er+=N(b.er); x.pbb+=N(b.bb); x.pso+=N(b.so); });
   });
+  // ajuste manual de temporada (juegos sin box score)
+  Object.values(m).forEach(x=>{ const a=x.p.adj; if(a) Object.keys(a).forEach(k=>{ if(k!=="g" && k!=="pg" && typeof x[k]==="number") x[k]+=N(a[k]); }); });
   return Object.values(m);
 }
 function boardHead(title, sub){
@@ -417,7 +419,7 @@ function statsHTML(){
   const name=x=>`<span class="num">${esc(x.p.number||"")}</span><span class="pl">${esc(x.p.name)}</span>`;
   const H=(es,en)=>T2(es,en);
   const batRows=bat.map(x=>`<tr><td>${name(x)}</td><td>${x.g}</td><td>${x.ab}</td><td>${x.r}</td><td>${x.h}</td><td>${x.d}</td><td>${x.t}</td><td>${x.hr}</td><td>${x.rbi}</td><td>${x.bb}</td><td>${x.so}</td><td>${x.sb}</td><td class="k">${rate(x.h,x.ab)}</td><td>${rate(x.h+x.bb,x.ab+x.bb)}</td><td>${rate(x.h+x.d+2*x.t+3*x.hr,x.ab)}</td></tr>`).join("");
-  const pitRows=pit.map(x=>`<tr><td>${name(x)}</td><td>${x.pg}</td><td>${outsToIP(x.outs)}</td><td>${x.ph}</td><td>${x.pr}</td><td>${x.er}</td><td>${x.pbb}</td><td>${x.pso}</td><td class="k">${x.outs?(x.er*9/(x.outs/3)).toFixed(2):"—"}</td><td>${x.outs?((x.ph+x.pbb)/(x.outs/3)).toFixed(2):"—"}</td></tr>`).join("");
+  const pitRows=pit.map(x=>`<tr><td>${name(x)}</td><td>${x.pg}</td><td>${outsToIP(x.outs)}</td><td>${x.ph}</td><td>${x.pr}</td><td>${x.er}</td><td>${x.pbb}</td><td>${x.pso}</td><td class="k">${x.p.era!=null&&x.p.era!==""?esc(String(x.p.era)):x.outs?(x.er*9/(x.outs/3)).toFixed(2):"—"}</td><td>${x.outs?((x.ph+x.pbb)/(x.outs/3)).toFixed(2):"—"}</td></tr>`).join("");
   return `<article class="board noxl ${editing?"edit":""}" id="poster" style="--p-navy:${esc(a.navy||"#0e1d4c")};--p-home:${esc(homeColor())};--p-away:${esc(a.away||"#6b7280")}">
     ${boardHead(H("Estadísticas","Stats"), H("Récord","Record")+" "+recStr(r)+" · "+ps.length+" "+H("jugadores","players"))}
     <div class="b-body">
